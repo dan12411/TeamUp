@@ -45,6 +45,12 @@ class GoalTableViewController: UITableViewController {
     @IBAction func sunGoal(_ sender: UIButton) {
         self.triSubTextLabel.text = "星期日的行動計畫"
     }
+    
+    // 回到主畫面
+    @IBAction func backToViewController(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

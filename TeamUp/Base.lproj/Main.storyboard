@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bJg-7v-r1D">
-                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="EUK-WE-tZM" customClass="MyTableViewCell" customModule="TeamUp" customModuleProvider="target">
@@ -174,7 +174,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Add"/>
                                 <connections>
-                                    <segue destination="9Qm-6q-yNK" kind="show" id="gr2-Tq-KSu"/>
+                                    <segue destination="jQP-3z-rQL" kind="presentation" id="1d2-ji-g67"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,7 +186,7 @@
                             <constraint firstItem="HIW-7p-qYi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WEJ-Km-XlT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBM-nS-vB0" secondAttribute="bottom" constant="10" id="Xg7-TA-lKO"/>
                             <constraint firstAttribute="trailing" secondItem="oBM-nS-vB0" secondAttribute="trailing" constant="10" id="agR-vg-73r"/>
-                            <constraint firstItem="bJg-7v-r1D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="iY6-3r-vkE"/>
+                            <constraint firstItem="bJg-7v-r1D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="iY6-3r-vkE"/>
                             <constraint firstItem="HIW-7p-qYi" firstAttribute="top" secondItem="AH9-AG-vla" secondAttribute="bottom" constant="8" id="iz9-jL-31d"/>
                             <constraint firstItem="bJg-7v-r1D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="leJ-DZ-OSo"/>
                             <constraint firstAttribute="trailing" secondItem="bJg-7v-r1D" secondAttribute="trailing" id="tM6-Gv-bRC"/>
@@ -375,7 +375,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-Of-L5K">
                                                     <rect key="frame" x="30" y="7" width="305" height="186"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABFDF1C8-EA93-4A6A-8B54-4851B470AEAC" translatesAutoresizingMaskIntoConstraints="NO" id="09u-Hj-OFK">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DE3740A9-DE8D-409C-A915-D8370A8A8DCC" translatesAutoresizingMaskIntoConstraints="NO" id="09u-Hj-OFK">
                                                             <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="9di-14-4yb"/>
@@ -797,7 +797,13 @@
                             <outlet property="delegate" destination="9Qm-6q-yNK" id="4S9-4h-qfL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新增目標" id="cdo-3a-c8L"/>
+                    <navigationItem key="navigationItem" title="新增目標" id="cdo-3a-c8L">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Ywg-jU-KNL">
+                            <connections>
+                                <action selector="backToViewController:" destination="9Qm-6q-yNK" id="Abc-x3-SjE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstTextLabel" destination="Ond-j6-EcP" id="ZDs-JU-3pa"/>
                         <outlet property="firstTextLabel2" destination="nhN-7m-yf3" id="ZqN-Vn-nIS"/>
@@ -813,7 +819,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlu-fE-e8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="143.47826086956522"/>
+            <point key="canvasLocation" x="2583" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N8i-vL-GFl">
@@ -831,11 +837,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="597-3a-61Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="144"/>
+            <point key="canvasLocation" x="377" y="143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PPN-7b-4Hv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jQP-3z-rQL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMr-ws-Wfy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Qm-6q-yNK" kind="relationship" relationship="rootViewController" id="Jur-kW-QJh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufW-6g-o7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864.8" y="143.47826086956522"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ABFDF1C8-EA93-4A6A-8B54-4851B470AEAC" width="36" height="36">
+        <image name="Add" width="48" height="48"/>
+        <image name="Assignment" width="36" height="36"/>
+        <image name="DE3740A9-DE8D-409C-A915-D8370A8A8DCC" width="36" height="36">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -973,8 +999,6 @@ HjIeOh5HHkweTh5QHlUeXR5gHmUebR5wHoIehR6KAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAA
 How
 </mutableData>
         </image>
-        <image name="Add" width="48" height="48"/>
-        <image name="Assignment" width="36" height="36"/>
         <image name="Date" width="36" height="36"/>
         <image name="OnePiece" width="1280" height="720"/>
         <image name="Photo" width="36" height="36"/>
