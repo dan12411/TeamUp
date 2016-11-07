@@ -18,7 +18,33 @@ class GoalTableViewController: UITableViewController {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         goalDayLabel.text = String(Int(sender.value))
     }
+    @IBOutlet weak var triTextLabel: UILabel!
+    @IBOutlet weak var triSubTextLabel: UILabel!
+    @IBOutlet weak var goalContentTextField: UITextField!
+    @IBOutlet weak var triSubTextLabel2: UILabel!
+    @IBOutlet weak var fouTextLabel: UILabel!
 
+    @IBAction func monGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期一的行動計畫"
+    }
+    @IBAction func tueGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期二的行動計畫"
+    }
+    @IBAction func wedGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期三的行動計畫"
+    }
+    @IBAction func thrGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期四的行動計畫"
+    }
+    @IBAction func friGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期五的行動計畫"
+    }
+    @IBAction func satGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期六的行動計畫"
+    }
+    @IBAction func sunGoal(_ sender: UIButton) {
+        self.triSubTextLabel.text = "星期日的行動計畫"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +52,10 @@ class GoalTableViewController: UITableViewController {
         goalTitleTextField.underlined()
         self.firstTextLabel2.text = "例如：考上臺大 或 業績達成"
         self.secTextLabel.text = "達成這個目標需要幾天呢？"
+        self.triTextLabel.text = "以週為單位，選定哪幾天要行動吧！"
+        goalContentTextField.underlined()
+        self.triSubTextLabel2.text = "例如：看一篇New York Times"
+        self.fouTextLabel.text = "挑選適合的圖來當封面吧！"
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +72,7 @@ class GoalTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 5
     }
 
     /*

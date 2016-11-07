@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let goals: [goal] = [
         goal(image:"Hunter.jpg", goalTitle: "熱血健身", restNum: 36, memberNum: 6, continNum: 24),
-        goal(image:"OnePiece.jpg", goalTitle: "讀書會", restNum: 19, memberNum: 5, continNum: 52)
+        goal(image:"OnePiece.jpg", goalTitle: "讀書會", restNum: 19, memberNum: 5, continNum: 52),
+        goal(image:"Avengers.jpg", goalTitle: "余憶少年時", restNum: 39, memberNum: 7, continNum: 56)
         ]
     
     @IBOutlet weak var goalTableView: UITableView!
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
