@@ -14,8 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var userName: UILabel!
     
     let goals: [goal] = [
-        goal(goalTitle: "熱血健身", restNum: 36, memberNum: 6, continNum: 24),
-        goal(goalTitle: "讀書會", restNum: 19, memberNum: 5, continNum: 52)
+        goal(image:"Hunter.jpg", goalTitle: "熱血健身", restNum: 36, memberNum: 6, continNum: 24),
+        goal(image:"OnePiece.jpg", goalTitle: "讀書會", restNum: 19, memberNum: 5, continNum: 52)
         ]
     
     @IBOutlet weak var goalTableView: UITableView!
@@ -32,11 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyTableViewCell
         
-        cell.goalImageView.image = UIImage(named:"Hunter")
+        cell.goalImageView.image = UIImage(named: goals[indexPath.row].image)
         cell.goalTitle.text = goals[indexPath.row].goalTitle
-        cell.memberNum.text = String(describing: goals[indexPath.row].memberNum!)
-        cell.restNum.text = String(describing: goals[indexPath.row].restNum!)
-        cell.continNum.text = String(describing: goals[indexPath.row].continNum!)
+        cell.memberNum.text = String(describing: goals[indexPath.row].memberNum)
+        cell.restNum.text = String(describing: goals[indexPath.row].restNum)
+        cell.continNum.text = String(describing: goals[indexPath.row].continNum)
         
         return cell
     }
@@ -44,8 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // 顯示使用者名稱、頭像
-        self.userName.text = "Billy Hope"
-        self.userImage.image = UIImage(named: "OnePiece")
+        self.userName.text = "Aragaki Yui"
+        self.userImage.image = UIImage(named: "gakki")
         
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

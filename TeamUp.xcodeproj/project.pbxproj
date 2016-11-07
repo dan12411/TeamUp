@@ -15,6 +15,7 @@
 		563F10CC1DCCADAC00CC425E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563F10CA1DCCADAC00CC425E /* LaunchScreen.storyboard */; };
 		563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */; };
 		5694F0B51DCCBBF300716516 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B41DCCBBF300716516 /* Goal.swift */; };
+		5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B61DCDA10100716516 /* GoalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		563F10CD1DCCADAC00CC425E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		5694F0B41DCCBBF300716516 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		5694F0B61DCDA10100716516 /* GoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 		CA21DF5EBD6E1EF2CD30B40F /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				563F10C11DCCADAC00CC425E /* AppDelegate.swift */,
 				563F10C31DCCADAC00CC425E /* ViewController.swift */,
 				563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */,
+				5694F0B61DCDA10100716516 /* GoalTableViewController.swift */,
 				563F10C51DCCADAC00CC425E /* Main.storyboard */,
 				563F10C81DCCADAC00CC425E /* Assets.xcassets */,
 				563F10CA1DCCADAC00CC425E /* LaunchScreen.storyboard */,
@@ -220,6 +223,7 @@
 			files = (
 				5694F0B51DCCBBF300716516 /* Goal.swift in Sources */,
 				563F10C41DCCADAC00CC425E /* ViewController.swift in Sources */,
+				5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */,
 				563F10C21DCCADAC00CC425E /* AppDelegate.swift in Sources */,
 				563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */,
 			);

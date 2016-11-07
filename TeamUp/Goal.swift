@@ -9,12 +9,14 @@
 import Foundation
 
 class goal {
-    var goalTitle: String?
-    var restNum: Int?
-    var memberNum: Int?
-    var continNum : Int?
+    var image = ""
+    var goalTitle = ""
+    var restNum: Int
+    var memberNum: Int
+    var continNum : Int
     
-    init (goalTitle: String, restNum: Int, memberNum: Int, continNum : Int) {
+    init (image: String, goalTitle: String, restNum: Int, memberNum: Int, continNum : Int) {
+        self.image = image
         self.goalTitle = goalTitle
         self.restNum = restNum
         self.memberNum = memberNum
