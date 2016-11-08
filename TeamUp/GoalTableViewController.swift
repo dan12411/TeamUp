@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class GoalTableViewController: UITableViewController {
+class GoalTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: Properties
     let ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
@@ -28,6 +28,12 @@ class GoalTableViewController: UITableViewController {
     @IBOutlet weak var goalContentTextField: UITextField!
     @IBOutlet weak var triSubTextLabel2: UILabel!
     @IBOutlet weak var fouTextLabel: UILabel!
+    @IBOutlet weak var imageCollecView: UIView!
+    @IBOutlet weak var collectionForImage: UICollectionView!
+    
+    var selectedImage: String?
+    
+    var imageArray = ["OnePiece", "OnePiece","OnePiece", "OnePiece", "OnePiece", "OnePiece"]
 
     @IBAction func monGoal(_ sender: UIButton) {
         self.triSubTextLabel.text = "星期一的行動計畫"
@@ -49,6 +55,26 @@ class GoalTableViewController: UITableViewController {
     }
     @IBAction func sunGoal(_ sender: UIButton) {
         self.triSubTextLabel.text = "星期日的行動計畫"
+    }
+    @IBAction func sportImage(_ sender: UIButton) {
+        imageArray = ["OnePiece", "OnePiece","OnePiece", "OnePiece", "OnePiece", "OnePiece"]
+        collectionForImage.reloadData()
+    }
+    @IBAction func classImage(_ sender: UIButton) {
+        imageArray = ["Hunter", "Hunter", "Hunter", "Hunter", "Hunter", "Hunter"]
+        collectionForImage.reloadData()
+    }
+    @IBAction func workImage(_ sender: UIButton) {
+        imageArray = ["Avengers", "Avengers", "Avengers", "Avengers", "Avengers", "Avengers"]
+        collectionForImage.reloadData()
+    }
+    @IBAction func skillImage(_ sender: UIButton) {
+        imageArray = ["OnePiece", "OnePiece","OnePiece", "OnePiece", "OnePiece", "OnePiece"]
+        collectionForImage.reloadData()
+    }
+    @IBAction func habitImage(_ sender: UIButton) {
+        imageArray = ["Avengers", "Avengers", "Avengers", "Avengers", "Avengers", "Avengers"]
+        collectionForImage.reloadData()
     }
     
     // 回到主畫面
@@ -78,14 +104,47 @@ class GoalTableViewController: UITableViewController {
         // 1. 取得使用者輸入的標題
         guard let text = goalTitleTextField.text else { return }
         guard let day = Int(goalDayLabel.text!) else { return }
+        guard let image = selectedImage else {return}
         // 2. 新增item
-        let goalItem = goal(image: "OnePiece.jpg", goalTitle: text, restNum: day, memberNum: 1, continNum: 1)
+        let goalItem = goal(image: image, goalTitle: text, restNum: day, memberNum: 1, continNum: 1)
         // 3. 指定存入的路徑
         let goalItemRef = self.ref.child(text.lowercased())
         // 4. 存入項目(Use setValue(_:) to save data to the database)
         goalItemRef.setValue(goalItem.toAnyObject())
         // 5. 回到主畫面
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imageArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
+        
+        cell.myImage.image = UIImage(named: imageArray[indexPath.row])
+        
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellSize = CGSize(width: (imageCollecView.frame.width - 50) / 2, height: (imageCollecView.frame.width - 50) / 3)
+        
+        return cellSize
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedImage = imageArray[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+        cell.alpha = 0.4
     }
 
     // MARK: - TableViewDataSource

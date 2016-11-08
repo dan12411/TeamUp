@@ -390,7 +390,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-Of-L5K">
                                                     <rect key="frame" x="30" y="7" width="305" height="186"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1C015C9B-AD4C-4575-A238-1DCCC43E49DC" translatesAutoresizingMaskIntoConstraints="NO" id="09u-Hj-OFK">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AD346B66-4FA2-4C7B-91ED-578F88FB559A" translatesAutoresizingMaskIntoConstraints="NO" id="09u-Hj-OFK">
                                                             <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="9di-14-4yb"/>
@@ -617,6 +617,7 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="monGoal:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="jwN-vn-R5i"/>
+                                                                        <action selector="sportImage:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="c7h-zc-v3V"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y1-wI-I6l">
@@ -626,6 +627,7 @@
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
+                                                                        <action selector="classImage:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="whz-Pb-clG"/>
                                                                         <action selector="tueGoal:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="hRu-zH-FZW"/>
                                                                     </connections>
                                                                 </button>
@@ -637,6 +639,7 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="wedGoal:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="5c6-Rb-zQL"/>
+                                                                        <action selector="workImage:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="19d-zJ-bjd"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmy-oQ-Osa">
@@ -649,6 +652,7 @@
                                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <connections>
+                                                                        <action selector="skillImage:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="ADH-dm-urd"/>
                                                                         <action selector="thrGoal:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="E3b-nt-pGS"/>
                                                                     </connections>
                                                                 </button>
@@ -660,6 +664,7 @@
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="friGoal:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="mjv-mF-Puf"/>
+                                                                        <action selector="habitImage:" destination="9Qm-6q-yNK" eventType="touchUpInside" id="Q7w-Le-gxB"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -670,113 +675,63 @@
                                                                 <constraint firstItem="1Y1-wI-I6l" firstAttribute="width" secondItem="P85-rI-LvP" secondAttribute="width" id="Va3-JD-SCb"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uee-4C-D25">
-                                                            <rect key="frame" x="40" y="55" width="265" height="243"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" tag="8" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DFK-zC-L6G">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="243"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleAspectFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QZn-2n-Z2s">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="78.5"/>
-                                                                            <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="gcM-h5-faq">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="130.5" height="78.5"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="5ZK-aw-hlR">
-                                                                                    <rect key="frame" x="134.5" y="0.0" width="130.5" height="78.5"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="5ZK-aw-hlR" firstAttribute="width" secondItem="gcM-h5-faq" secondAttribute="width" id="GsN-Q5-WF9"/>
-                                                                            </constraints>
-                                                                        </stackView>
-                                                                        <stackView opaque="NO" tag="8" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="czM-G4-gc8">
-                                                                            <rect key="frame" x="0.0" y="82.5" width="265" height="78"/>
-                                                                            <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="EU5-0a-c8J">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="130.5" height="78"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-Cl-lc9">
-                                                                                    <rect key="frame" x="134.5" y="0.0" width="130.5" height="78"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="1bu-Cl-lc9" firstAttribute="width" secondItem="EU5-0a-c8J" secondAttribute="width" id="27U-E3-sPX"/>
-                                                                            </constraints>
-                                                                        </stackView>
-                                                                        <stackView opaque="NO" tag="8" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qyu-pS-XoV">
-                                                                            <rect key="frame" x="0.0" y="164.5" width="265" height="78.5"/>
-                                                                            <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="9Ox-in-SXn">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="130.5" height="78.5"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnePiece" translatesAutoresizingMaskIntoConstraints="NO" id="2tl-5x-HX9">
-                                                                                    <rect key="frame" x="134.5" y="0.0" width="130.5" height="78.5"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                                            <integer key="value" value="6"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </imageView>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="2tl-5x-HX9" firstAttribute="width" secondItem="9Ox-in-SXn" secondAttribute="width" id="sUr-Wv-LCy"/>
-                                                                            </constraints>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <constraints>
-                                                                        <constraint firstItem="czM-G4-gc8" firstAttribute="height" secondItem="Qyu-pS-XoV" secondAttribute="height" id="u1p-AL-7CD"/>
-                                                                        <constraint firstItem="QZn-2n-Z2s" firstAttribute="height" secondItem="czM-G4-gc8" secondAttribute="height" id="xiH-sP-Y49"/>
-                                                                    </constraints>
-                                                                </stackView>
-                                                            </subviews>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kuo-BX-UHD">
+                                                            <rect key="frame" x="40" y="59" width="265" height="247"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="DFK-zC-L6G" secondAttribute="bottom" id="2L0-bc-cDP"/>
-                                                                <constraint firstItem="DFK-zC-L6G" firstAttribute="top" secondItem="uee-4C-D25" secondAttribute="top" id="8qZ-am-loe"/>
-                                                                <constraint firstItem="DFK-zC-L6G" firstAttribute="leading" secondItem="uee-4C-D25" secondAttribute="leading" id="QvY-m3-5eU"/>
-                                                                <constraint firstAttribute="trailing" secondItem="DFK-zC-L6G" secondAttribute="trailing" id="gmR-a0-TxI"/>
-                                                            </constraints>
-                                                        </view>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m5I-7z-Qrd">
+                                                                <size key="itemSize" width="120" height="80"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bAA-uP-jmc" customClass="ImageCollectionViewCell" customModule="TeamUp" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e53-TQ-Kmm">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="e53-TQ-Kmm" secondAttribute="bottom" id="0hx-71-QiP"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="e53-TQ-Kmm" secondAttribute="trailing" id="1mo-uM-9eY"/>
+                                                                        <constraint firstItem="e53-TQ-Kmm" firstAttribute="leading" secondItem="bAA-uP-jmc" secondAttribute="leading" id="Of6-up-nSa"/>
+                                                                        <constraint firstItem="e53-TQ-Kmm" firstAttribute="top" secondItem="bAA-uP-jmc" secondAttribute="top" id="ZKx-BU-blv"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="6"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <outlet property="myImage" destination="e53-TQ-Kmm" id="V0E-pD-WCd"/>
+                                                                    </connections>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="9Qm-6q-yNK" id="E5F-XJ-Ae0"/>
+                                                                <outlet property="delegate" destination="9Qm-6q-yNK" id="j0U-mA-liN"/>
+                                                            </connections>
+                                                        </collectionView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="gXR-IS-tdY" firstAttribute="top" secondItem="fs2-ht-elu" secondAttribute="bottom" id="7dQ-0B-lbi"/>
                                                         <constraint firstItem="kZK-Fh-wsw" firstAttribute="leading" secondItem="lB0-d5-WQw" secondAttribute="leading" id="9E6-cE-A9v"/>
                                                         <constraint firstItem="gXR-IS-tdY" firstAttribute="trailing" secondItem="fs2-ht-elu" secondAttribute="trailing" id="Fti-hq-KiJ"/>
-                                                        <constraint firstItem="uee-4C-D25" firstAttribute="leading" secondItem="gXR-IS-tdY" secondAttribute="leading" id="Lqp-2N-cd5"/>
+                                                        <constraint firstItem="kuo-BX-UHD" firstAttribute="top" secondItem="gXR-IS-tdY" secondAttribute="bottom" constant="8" id="Qb4-dt-qJz"/>
                                                         <constraint firstItem="fs2-ht-elu" firstAttribute="top" secondItem="lB0-d5-WQw" secondAttribute="top" id="R7C-U8-hYK"/>
-                                                        <constraint firstItem="uee-4C-D25" firstAttribute="trailing" secondItem="gXR-IS-tdY" secondAttribute="trailing" id="Tqz-wU-vwe"/>
+                                                        <constraint firstItem="kuo-BX-UHD" firstAttribute="trailing" secondItem="gXR-IS-tdY" secondAttribute="trailing" id="RNc-Ld-MZ3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kuo-BX-UHD" secondAttribute="bottom" id="RVK-qP-VP9"/>
                                                         <constraint firstItem="kZK-Fh-wsw" firstAttribute="top" secondItem="lB0-d5-WQw" secondAttribute="top" id="XWX-em-Lcr"/>
                                                         <constraint firstItem="gXR-IS-tdY" firstAttribute="leading" secondItem="fs2-ht-elu" secondAttribute="leading" id="Y3U-F6-GgD"/>
                                                         <constraint firstItem="fs2-ht-elu" firstAttribute="leading" secondItem="kZK-Fh-wsw" secondAttribute="trailing" constant="15" id="YYa-VB-7Bf"/>
-                                                        <constraint firstItem="uee-4C-D25" firstAttribute="top" secondItem="gXR-IS-tdY" secondAttribute="bottom" constant="4" id="cku-tf-uSM"/>
                                                         <constraint firstAttribute="trailing" secondItem="fs2-ht-elu" secondAttribute="trailing" id="oIB-2Y-DsD"/>
-                                                        <constraint firstAttribute="bottom" secondItem="uee-4C-D25" secondAttribute="bottom" constant="8" id="q8Q-YR-Vzc"/>
+                                                        <constraint firstItem="kuo-BX-UHD" firstAttribute="leading" secondItem="gXR-IS-tdY" secondAttribute="leading" id="vNP-lO-w3c"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -826,6 +781,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionForImage" destination="kuo-BX-UHD" id="rMd-sE-3ZY"/>
                         <outlet property="firstTextLabel" destination="Ond-j6-EcP" id="ZDs-JU-3pa"/>
                         <outlet property="firstTextLabel2" destination="nhN-7m-yf3" id="ZqN-Vn-nIS"/>
                         <outlet property="fouTextLabel" destination="fs2-ht-elu" id="prb-p6-Cfg"/>
@@ -833,6 +789,7 @@
                         <outlet property="goalDayLabel" destination="EpR-hk-7la" id="nZh-Pm-JCO"/>
                         <outlet property="goalDaySlider" destination="2Av-nO-jS2" id="aU7-6B-Nl2"/>
                         <outlet property="goalTitleTextField" destination="e08-gY-qCn" id="viJ-bX-RHZ"/>
+                        <outlet property="imageCollecView" destination="lB0-d5-WQw" id="8JO-F0-waW"/>
                         <outlet property="secTextLabel" destination="H1G-Mm-VE2" id="K1B-2r-J7j"/>
                         <outlet property="triSubTextLabel" destination="dgv-GW-13h" id="egM-Je-QdB"/>
                         <outlet property="triSubTextLabel2" destination="sbV-bR-9iv" id="5jN-8U-9hS"/>
@@ -841,7 +798,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlu-fE-e8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="508"/>
+            <point key="canvasLocation" x="2620" y="507.79610194902551"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N8i-vL-GFl">
@@ -881,7 +838,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1C015C9B-AD4C-4575-A238-1DCCC43E49DC" width="36" height="36">
+        <image name="AD346B66-4FA2-4C7B-91ED-578F88FB559A" width="36" height="36">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
