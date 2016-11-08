@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class GoalTableViewController: UITableViewController {
+    
+    // MARK: Properties
+    let ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
     
     @IBOutlet weak var firstTextLabel: UILabel!
     @IBOutlet weak var goalTitleTextField: UITextField!
     @IBOutlet weak var firstTextLabel2: UILabel!
     @IBOutlet weak var secTextLabel: UILabel!
     @IBOutlet weak var goalDayLabel: UILabel!
+    @IBOutlet weak var goalDaySlider: UISlider!
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         goalDayLabel.text = String(Int(sender.value))
     }
@@ -68,8 +73,22 @@ class GoalTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func SetGoalDidEnd(_ sender: UIButton) {
+        // 1. 取得使用者輸入的標題
+        guard let text = goalTitleTextField.text else { return }
+        guard let day = Int(goalDayLabel.text!) else { return }
+        // 2. 新增item
+        let goalItem = goal(image: "OnePiece.jpg", goalTitle: text, restNum: day, memberNum: 1, continNum: 1)
+        // 3. 指定存入的路徑
+        let goalItemRef = self.ref.child(text.lowercased())
+        // 4. 存入項目(Use setValue(_:) to save data to the database)
+        goalItemRef.setValue(goalItem.toAnyObject())
+        // 5. 回到主畫面
+        dismiss(animated: true, completion: nil)
+    }
 
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -138,6 +157,13 @@ class GoalTableViewController: UITableViewController {
 
 }
 
+// 收鍵盤
+extension GoalTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+}
 
 // Text Field with underline
 extension UITextField {
