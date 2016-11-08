@@ -29,6 +29,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Remove the separators of the empty rows
+        goalTableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        // Change the color of the separator
+        goalTableView.separatorColor = UIColor.clear
+        
         ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
         
         //MARK: - Retrieving Data (取得資料!!)
