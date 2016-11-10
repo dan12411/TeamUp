@@ -103,10 +103,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Get data
             let restDay = String(goals[indexPath.row].restNum)
             let memberNum = String(goals[indexPath.row].memberNum)
+            let userName = self.userName.text
             
             // Put into next ViewController property
             dvc.restDay = restDay + "天"
             dvc.memberNum = memberNum + "人"
+            dvc.userName = userName
+            
 
         }
         
