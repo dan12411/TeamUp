@@ -19,6 +19,7 @@
 		56B7ACBB1DD1AC0600AE0ACB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */; };
 		56B7ACBD1DD1AD4A00AE0ACB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7ACBC1DD1AD4A00AE0ACB /* User.swift */; };
 		56B7ACC41DD1FB6700AE0ACB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */; };
+		56F10F2B1DD419A0002737A0 /* EachGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F10F2A1DD419A0002737A0 /* EachGoalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56B7ACBC1DD1AD4A00AE0ACB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		56F10F2A1DD419A0002737A0 /* EachGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EachGoalViewController.swift; sourceTree = "<group>"; };
 		CA21DF5EBD6E1EF2CD30B40F /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */,
 				5694F0B61DCDA10100716516 /* GoalTableViewController.swift */,
 				56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */,
+				56F10F2A1DD419A0002737A0 /* EachGoalViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				5694F0B51DCCBBF300716516 /* Goal.swift in Sources */,
 				563F10C41DCCADAC00CC425E /* ViewController.swift in Sources */,
+				56F10F2B1DD419A0002737A0 /* EachGoalViewController.swift in Sources */,
 				56B7ACBD1DD1AD4A00AE0ACB /* User.swift in Sources */,
 				56B7ACC41DD1FB6700AE0ACB /* ImageCollectionViewCell.swift in Sources */,
 				5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */,

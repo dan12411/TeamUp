@@ -87,5 +87,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "openDetail" {
+            
+            // Get the destination view controller
+            let dvc = segue.destination as! EachGoalViewController
+            
+            // Get user selected index path
+            let indexPath = self.goalTableView.indexPathForSelectedRow!
+            
+            // Get data
+            let restDay = String(goals[indexPath.row].restNum)
+            let memberNum = String(goals[indexPath.row].memberNum)
+            
+            // Put into next ViewController property
+            dvc.restDay = restDay + "天"
+            dvc.memberNum = memberNum + "人"
+
+        }
+        
+    }
+
 }
 
