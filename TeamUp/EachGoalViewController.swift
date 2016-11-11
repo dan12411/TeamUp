@@ -9,7 +9,7 @@
 import UIKit
 
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var eachGoalTableView: UITableView!
     @IBOutlet weak var restDayLabel: UILabel!
     var restDay: String?
@@ -21,7 +21,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // show label text content
         if let text = restDay {
             restDayLabel.text = text
@@ -63,7 +63,6 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -75,3 +74,4 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     */
 
 }
+
