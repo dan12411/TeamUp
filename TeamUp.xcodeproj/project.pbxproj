@@ -14,6 +14,11 @@
 		563F10C91DCCADAC00CC425E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563F10C81DCCADAC00CC425E /* Assets.xcassets */; };
 		563F10CC1DCCADAC00CC425E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563F10CA1DCCADAC00CC425E /* LaunchScreen.storyboard */; };
 		563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */; };
+		5641EF8D1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF8C1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift */; };
+		5641EF8F1DD6EBC600212D69 /* SecSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF8E1DD6EBC600212D69 /* SecSetGoalTableViewController.swift */; };
+		5641EF911DD6FFB200212D69 /* TriSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */; };
+		5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */; };
+		5641EF951DD7098D00212D69 /* FouCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */; };
 		5694F0B51DCCBBF300716516 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B41DCCBBF300716516 /* Goal.swift */; };
 		5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B61DCDA10100716516 /* GoalTableViewController.swift */; };
 		56B7ACBB1DD1AC0600AE0ACB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */; };
@@ -51,6 +56,11 @@
 		563F10CB1DCCADAC00CC425E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		563F10CD1DCCADAC00CC425E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		5641EF8C1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSetGoalTableViewController.swift; sourceTree = "<group>"; };
+		5641EF8E1DD6EBC600212D69 /* SecSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecSetGoalTableViewController.swift; sourceTree = "<group>"; };
+		5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriSetGoalTableViewController.swift; sourceTree = "<group>"; };
+		5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouSetGoalTableViewController.swift; sourceTree = "<group>"; };
+		5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouCollectionViewCell.swift; sourceTree = "<group>"; };
 		5694F0B41DCCBBF300716516 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		5694F0B61DCDA10100716516 /* GoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 		56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -146,6 +156,27 @@
 			path = TeamUp;
 			sourceTree = "<group>";
 		};
+		5641EF961DD70C9200212D69 /* SetGoalTable */ = {
+			isa = PBXGroup;
+			children = (
+				5641EF8C1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift */,
+				5641EF8E1DD6EBC600212D69 /* SecSetGoalTableViewController.swift */,
+				5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */,
+				5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */,
+				5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */,
+			);
+			name = SetGoalTable;
+			sourceTree = "<group>";
+		};
+		5641EF971DD70CB100212D69 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				5694F0B61DCDA10100716516 /* GoalTableViewController.swift */,
+				56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
 		56B7ACBE1DD1AD5900AE0ACB /* Modals */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,11 +200,11 @@
 			children = (
 				563F10C31DCCADAC00CC425E /* ViewController.swift */,
 				563F10D31DCCB0F800CC425E /* MyTableViewCell.swift */,
-				5694F0B61DCDA10100716516 /* GoalTableViewController.swift */,
-				56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */,
 				56F10F2A1DD419A0002737A0 /* EachGoalViewController.swift */,
 				56F911551DD485C000BEC84A /* EachGoalTableViewCell.swift */,
 				56F9124B1DD5868C00BEC84A /* CalendarViewController.swift */,
+				5641EF961DD70C9200212D69 /* SetGoalTable */,
+				5641EF971DD70CB100212D69 /* Old */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5641EF8D1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift in Sources */,
 				56F911561DD485C000BEC84A /* EachGoalTableViewCell.swift in Sources */,
 				56F9123A1DD57FDD00BEC84A /* FSCalendar+Deprecated.m in Sources */,
 				56F9123B1DD57FDD00BEC84A /* FSCalendar.m in Sources */,
@@ -376,6 +408,7 @@
 				56F912441DD57FDD00BEC84A /* FSCalendarExtensions.m in Sources */,
 				56F9124C1DD5868C00BEC84A /* CalendarViewController.swift in Sources */,
 				56F912461DD57FDD00BEC84A /* FSCalendarScopeHandle.m in Sources */,
+				5641EF8F1DD6EBC600212D69 /* SecSetGoalTableViewController.swift in Sources */,
 				563F10C41DCCADAC00CC425E /* ViewController.swift in Sources */,
 				56F912471DD57FDD00BEC84A /* FSCalendarStickyHeader.m in Sources */,
 				56F912431DD57FDD00BEC84A /* FSCalendarDelegateProxy.m in Sources */,
@@ -386,14 +419,17 @@
 				56F9123E1DD57FDD00BEC84A /* FSCalendarCalculator.m in Sources */,
 				56F10F2B1DD419A0002737A0 /* EachGoalViewController.swift in Sources */,
 				56B7ACBD1DD1AD4A00AE0ACB /* User.swift in Sources */,
+				5641EF911DD6FFB200212D69 /* TriSetGoalTableViewController.swift in Sources */,
 				56F912421DD57FDD00BEC84A /* FSCalendarConstants.m in Sources */,
 				56F9123F1DD57FDD00BEC84A /* FSCalendarCell.m in Sources */,
 				56B7ACC41DD1FB6700AE0ACB /* ImageCollectionViewCell.swift in Sources */,
 				5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */,
 				56F9123C1DD57FDD00BEC84A /* FSCalendarAnimator.m in Sources */,
+				5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */,
 				563F10C21DCCADAC00CC425E /* AppDelegate.swift in Sources */,
 				563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */,
 				56F912401DD57FDD00BEC84A /* FSCalendarCollectionView.m in Sources */,
+				5641EF951DD7098D00212D69 /* FouCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
