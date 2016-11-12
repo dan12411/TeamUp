@@ -10,26 +10,23 @@ import UIKit
 
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: Properties
+    var goal: goal?
     @IBOutlet weak var eachGoalTableView: UITableView!
     @IBOutlet weak var restDayLabel: UILabel!
-    var restDay: String?
     @IBOutlet weak var memberNumLabel: UILabel!
-    var memberNum: String?
     @IBOutlet weak var goalListLabel: UILabel!
-    
     var userName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // show label text content
-        if let text = restDay {
-            restDayLabel.text = text
+        if let goal = goal {
+            restDayLabel.text = String(describing: goal.restNum) + "天"
+            memberNumLabel.text = String(describing: goal.memberNum) + "人"
         }
-        if let text = memberNum {
-            memberNumLabel.text = text
-        }
-        
+
         // Remove the separators of the empty rows
         eachGoalTableView.tableFooterView = UIView(frame: CGRect.zero)
         

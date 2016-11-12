@@ -76,9 +76,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.goalImageView.image = UIImage(named: goals[indexPath.row].image)
         cell.goalTitle.text = goals[indexPath.row].goalTitle
-        cell.memberNum.text = String(describing: goals[indexPath.row].memberNum)
-        cell.restNum.text = String(describing: goals[indexPath.row].restNum)
-        cell.continNum.text = String(describing: goals[indexPath.row].continNum)
+        cell.memberNum.text = String(describing: goals[indexPath.row].memberNum) + "人"
+        cell.restNum.text = String(describing: goals[indexPath.row].restNum) + "天"
+        cell.continNum.text = String(describing: goals[indexPath.row].continNum) + "次"
         
         return cell
     }
@@ -101,19 +101,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let indexPath = self.goalTableView.indexPathForSelectedRow!
             
             // Get data
-            let restDay = String(goals[indexPath.row].restNum)
-            let memberNum = String(goals[indexPath.row].memberNum)
             let userName = self.userName.text
             
             // Put into next ViewController property
-            dvc.restDay = restDay + "天"
-            dvc.memberNum = memberNum + "人"
             dvc.userName = userName
-            
-
+            dvc.goal = goals[indexPath.row]
         }
-        
     }
-
 }
 

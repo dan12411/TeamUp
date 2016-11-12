@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "add_goals.png",
+      "filename" : "ic_group_48pt_3x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add_goals@2x.png.png",
+      "filename" : "ic_group_48pt_3x@2x.png.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add_goals@3x.png.png",
+      "filename" : "ic_group_48pt_3x@3x.png.png",
       "scale" : "3x"
     }
   ],
