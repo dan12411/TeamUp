@@ -54,8 +54,8 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         cell.userImage.image = UIImage(named: "gakki")
         cell.userNameLabel.text = userName
         cell.goalProgress.progress = 0.8
-        cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 4)
-        cell.userBestContiDays.text = "30" + "天"
+        cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 5)
+        cell.userBestContiDays.text = "30"
         cell.userCurrentDays.text = "10"
         return cell
     }
@@ -71,4 +71,3 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     */
 
 }
-

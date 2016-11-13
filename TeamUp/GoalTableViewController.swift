@@ -88,12 +88,12 @@ class GoalTableViewController: UITableViewController, UICollectionViewDelegate, 
         super.viewDidLoad()
 
         self.firstTextLabel.text = "先為自己的目標訂個名字吧！"
-        goalTitleTextField.underlined()
+//        goalTitleTextField.underlined()
         self.firstTextLabel2.text = "例如：考上臺大 或 業績達成"
         self.secTextLabel.text = "達成這個目標需要幾天呢？"
         
         self.triTextLabel.text = "以週為單位，選定哪幾天要行動吧！"
-        goalContentTextField.underlined()
+//        goalContentTextField.underlined()
         self.triSubTextLabel2.text = "例如：看一篇New York Times"
         
         self.fouTextLabel.text = "挑選適合的圖來當封面吧！"

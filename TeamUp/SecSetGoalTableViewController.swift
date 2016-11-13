@@ -33,7 +33,7 @@ class SecSetGoalTableViewController: UITableViewController {
         nextButton.setTitleColor(UIColor(red: 57.0/255.0, green: 158.0/255.0, blue: 203.0/255.0, alpha: 1.0), for: .normal)
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitle("", for: .highlighted)
-        nextButton.addTarget(self, action: #selector(FirstSetGoalTableViewController.next(_:)), for: UIControlEvents.touchUpInside)
+        nextButton.addTarget(self, action: #selector(SecSetGoalTableViewController.next(_:)), for: UIControlEvents.touchUpInside)
         tableView.addSubview(nextButton)
         
         // Remove the title of the back button

@@ -43,6 +43,10 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     @IBAction func backToViewController(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +60,7 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
         nextButton.setTitleColor(UIColor(red: 57.0/255.0, green: 158.0/255.0, blue: 203.0/255.0, alpha: 1.0), for: .normal)
         nextButton.setTitle("Let's Go", for: .normal)
         nextButton.setTitle("", for: .highlighted)
-//        nextButton.addTarget(self, action: #selector(FirstSetGoalTableViewController.next(_:)), for: UIControlEvents.touchUpInside)
+        nextButton.addTarget(self, action: #selector(FouSetGoalTableViewController.back(_:)), for: UIControlEvents.touchUpInside)
         tableView.addSubview(nextButton)
         
         // Remove the title of the back button

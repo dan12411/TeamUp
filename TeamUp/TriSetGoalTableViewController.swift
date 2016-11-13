@@ -32,13 +32,13 @@ class TriSetGoalTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.triTextLabel.text = "再為剛剛選擇的星期，制訂行動計畫吧！如果每次都一樣，就填上一天後，勾選『每次都一樣』"
-        self.monTextField.underlined()
-        self.tueTextField.underlined()
-        self.wedTextField.underlined()
-        self.thuTextField.underlined()
-        self.friTextField.underlined()
-        self.satTextField.underlined()
-        self.sunTextField.underlined()
+//        self.monTextField.underlined()
+//        self.tueTextField.underlined()
+//        self.wedTextField.underlined()
+//        self.thuTextField.underlined()
+//        self.friTextField.underlined()
+//        self.satTextField.underlined()
+//        self.sunTextField.underlined()
         
         // NEXT Button
         let nextButton = UIButton(type: .system)
@@ -47,7 +47,7 @@ class TriSetGoalTableViewController: UITableViewController {
         nextButton.setTitleColor(UIColor(red: 57.0/255.0, green: 158.0/255.0, blue: 203.0/255.0, alpha: 1.0), for: .normal)
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.setTitle("", for: .highlighted)
-        nextButton.addTarget(self, action: #selector(FirstSetGoalTableViewController.next(_:)), for: UIControlEvents.touchUpInside)
+        nextButton.addTarget(self, action: #selector(TriSetGoalTableViewController.next(_:)), for: UIControlEvents.touchUpInside)
         tableView.addSubview(nextButton)
         
         // Remove the title of the back button
@@ -60,17 +60,18 @@ class TriSetGoalTableViewController: UITableViewController {
         
     }
 
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return 8
     }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 12.0
     }

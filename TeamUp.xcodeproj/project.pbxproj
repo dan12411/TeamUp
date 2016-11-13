@@ -19,8 +19,41 @@
 		5641EF911DD6FFB200212D69 /* TriSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */; };
 		5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */; };
 		5641EF951DD7098D00212D69 /* FouCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */; };
+		5682442E1DD84EC700590690 /* FacebookReactionLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682440F1DD84EC700590690 /* FacebookReactionLocalizable.strings */; };
+		5682442F1DD84EC700590690 /* FeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 568244111DD84EC700590690 /* FeedbackLocalizable.strings */; };
+		568244301DD84EC700590690 /* ReactionSummaryLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 568244131DD84EC700590690 /* ReactionSummaryLocalizable.strings */; };
+		568244311DD84EC700590690 /* ReactionSummaryLocalizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 568244151DD84EC700590690 /* ReactionSummaryLocalizable.stringsdict */; };
+		568244321DD84EC700590690 /* Facebook.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568244171DD84EC700590690 /* Facebook.xcassets */; };
+		568244331DD84EC700590690 /* CAReactionSummaryLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682441D1DD84EC700590690 /* CAReactionSummaryLayer.swift */; };
+		568244341DD84EC700590690 /* ComponentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682441E1DD84EC700590690 /* ComponentBuilder.swift */; };
+		568244351DD84EC700590690 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682441F1DD84EC700590690 /* Components.swift */; };
+		568244361DD84EC700590690 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244201DD84EC700590690 /* Configurable.swift */; };
+		568244371DD84EC700590690 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244211DD84EC700590690 /* Extensions.swift */; };
+		568244381DD84EC700590690 /* FacebookReactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244221DD84EC700590690 /* FacebookReactions.swift */; };
+		568244391DD84EC700590690 /* Reaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244231DD84EC700590690 /* Reaction.swift */; };
+		5682443A1DD84EC700590690 /* ReactionAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244241DD84EC700590690 /* ReactionAlignment.swift */; };
+		5682443B1DD84EC700590690 /* ReactionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244251DD84EC700590690 /* ReactionButton.swift */; };
+		5682443C1DD84EC700590690 /* ReactionButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244261DD84EC700590690 /* ReactionButtonConfig.swift */; };
+		5682443D1DD84EC700590690 /* ReactionFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244271DD84EC700590690 /* ReactionFeedback.swift */; };
+		5682443E1DD84EC700590690 /* ReactionFeedbackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244281DD84EC700590690 /* ReactionFeedbackDelegate.swift */; };
+		5682443F1DD84EC700590690 /* ReactionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568244291DD84EC700590690 /* ReactionSelector.swift */; };
+		568244401DD84EC700590690 /* ReactionSelectorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682442A1DD84EC700590690 /* ReactionSelectorConfig.swift */; };
+		568244411DD84EC700590690 /* ReactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682442B1DD84EC700590690 /* ReactionSummary.swift */; };
+		568244421DD84EC700590690 /* ReactionSummaryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682442C1DD84EC700590690 /* ReactionSummaryConfig.swift */; };
+		568244431DD84EC700590690 /* UIReactionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682442D1DD84EC700590690 /* UIReactionControl.swift */; };
 		5694F0B51DCCBBF300716516 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B41DCCBBF300716516 /* Goal.swift */; };
 		5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5694F0B61DCDA10100716516 /* GoalTableViewController.swift */; };
+		56B2B1711DD7FB1A00724D26 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B1651DD7FB1A00724D26 /* AkiraTextField.swift */; };
+		56B2B1721DD7FB1A00724D26 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B1661DD7FB1A00724D26 /* HoshiTextField.swift */; };
+		56B2B1731DD7FB1A00724D26 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56B2B1671DD7FB1A00724D26 /* Info.plist */; };
+		56B2B1741DD7FB1A00724D26 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B1681DD7FB1A00724D26 /* IsaoTextField.swift */; };
+		56B2B1751DD7FB1A00724D26 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B1691DD7FB1A00724D26 /* JiroTextField.swift */; };
+		56B2B1761DD7FB1A00724D26 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B16A1DD7FB1A00724D26 /* KaedeTextField.swift */; };
+		56B2B1771DD7FB1A00724D26 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B16B1DD7FB1A00724D26 /* MadokaTextField.swift */; };
+		56B2B1781DD7FB1A00724D26 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B16C1DD7FB1A00724D26 /* MinoruTextField.swift */; };
+		56B2B1791DD7FB1A00724D26 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B16E1DD7FB1A00724D26 /* TextFieldsEffects.swift */; };
+		56B2B17A1DD7FB1A00724D26 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B16F1DD7FB1A00724D26 /* YokoTextField.swift */; };
+		56B2B17B1DD7FB1A00724D26 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2B1701DD7FB1A00724D26 /* YoshikoTextField.swift */; };
 		56B7ACBB1DD1AC0600AE0ACB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */; };
 		56B7ACBD1DD1AD4A00AE0ACB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7ACBC1DD1AD4A00AE0ACB /* User.swift */; };
 		56B7ACC41DD1FB6700AE0ACB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */; };
@@ -61,8 +94,46 @@
 		5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriSetGoalTableViewController.swift; sourceTree = "<group>"; };
 		5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouSetGoalTableViewController.swift; sourceTree = "<group>"; };
 		5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouCollectionViewCell.swift; sourceTree = "<group>"; };
+		568244101DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/FacebookReactionLocalizable.strings; sourceTree = "<group>"; };
+		568244121DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/FeedbackLocalizable.strings; sourceTree = "<group>"; };
+		568244141DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ReactionSummaryLocalizable.strings; sourceTree = "<group>"; };
+		568244161DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = Base; path = Base.lproj/ReactionSummaryLocalizable.stringsdict; sourceTree = "<group>"; };
+		568244171DD84EC700590690 /* Facebook.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Facebook.xcassets; sourceTree = "<group>"; };
+		568244181DD84EC700590690 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FacebookReactionLocalizable.strings; sourceTree = "<group>"; };
+		568244191DD84EC700590690 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FeedbackLocalizable.strings; sourceTree = "<group>"; };
+		5682441A1DD84EC700590690 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ReactionSummaryLocalizable.strings; sourceTree = "<group>"; };
+		5682441B1DD84EC700590690 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = fr; path = fr.lproj/ReactionSummaryLocalizable.stringsdict; sourceTree = "<group>"; };
+		5682441D1DD84EC700590690 /* CAReactionSummaryLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAReactionSummaryLayer.swift; sourceTree = "<group>"; };
+		5682441E1DD84EC700590690 /* ComponentBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentBuilder.swift; sourceTree = "<group>"; };
+		5682441F1DD84EC700590690 /* Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		568244201DD84EC700590690 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		568244211DD84EC700590690 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		568244221DD84EC700590690 /* FacebookReactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookReactions.swift; sourceTree = "<group>"; };
+		568244231DD84EC700590690 /* Reaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reaction.swift; sourceTree = "<group>"; };
+		568244241DD84EC700590690 /* ReactionAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionAlignment.swift; sourceTree = "<group>"; };
+		568244251DD84EC700590690 /* ReactionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionButton.swift; sourceTree = "<group>"; };
+		568244261DD84EC700590690 /* ReactionButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionButtonConfig.swift; sourceTree = "<group>"; };
+		568244271DD84EC700590690 /* ReactionFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedback.swift; sourceTree = "<group>"; };
+		568244281DD84EC700590690 /* ReactionFeedbackDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionFeedbackDelegate.swift; sourceTree = "<group>"; };
+		568244291DD84EC700590690 /* ReactionSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionSelector.swift; sourceTree = "<group>"; };
+		5682442A1DD84EC700590690 /* ReactionSelectorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionSelectorConfig.swift; sourceTree = "<group>"; };
+		5682442B1DD84EC700590690 /* ReactionSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionSummary.swift; sourceTree = "<group>"; };
+		5682442C1DD84EC700590690 /* ReactionSummaryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactionSummaryConfig.swift; sourceTree = "<group>"; };
+		5682442D1DD84EC700590690 /* UIReactionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIReactionControl.swift; sourceTree = "<group>"; };
 		5694F0B41DCCBBF300716516 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		5694F0B61DCDA10100716516 /* GoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
+		56B2B1651DD7FB1A00724D26 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		56B2B1661DD7FB1A00724D26 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		56B2B1671DD7FB1A00724D26 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56B2B1681DD7FB1A00724D26 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
+		56B2B1691DD7FB1A00724D26 /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
+		56B2B16A1DD7FB1A00724D26 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		56B2B16B1DD7FB1A00724D26 /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
+		56B2B16C1DD7FB1A00724D26 /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
+		56B2B16D1DD7FB1A00724D26 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		56B2B16E1DD7FB1A00724D26 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		56B2B16F1DD7FB1A00724D26 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
+		56B2B1701DD7FB1A00724D26 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		56B7ACBA1DD1AC0600AE0ACB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56B7ACBC1DD1AD4A00AE0ACB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +198,8 @@
 		563F10B51DCCADAC00CC425E = {
 			isa = PBXGroup;
 			children = (
+				568244441DD84ECC00590690 /* Reactions */,
+				56B2B1641DD7FB1A00724D26 /* TextFieldEffects */,
 				56F9121A1DD57FDD00BEC84A /* FSCalendar */,
 				563F10C01DCCADAC00CC425E /* TeamUp */,
 				563F10BF1DCCADAC00CC425E /* Products */,
@@ -175,6 +248,70 @@
 				56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */,
 			);
 			name = Old;
+			sourceTree = "<group>";
+		};
+		5682440E1DD84EC700590690 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5682440F1DD84EC700590690 /* FacebookReactionLocalizable.strings */,
+				568244111DD84EC700590690 /* FeedbackLocalizable.strings */,
+				568244131DD84EC700590690 /* ReactionSummaryLocalizable.strings */,
+				568244151DD84EC700590690 /* ReactionSummaryLocalizable.stringsdict */,
+				568244171DD84EC700590690 /* Facebook.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5682441C1DD84EC700590690 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5682441D1DD84EC700590690 /* CAReactionSummaryLayer.swift */,
+				5682441E1DD84EC700590690 /* ComponentBuilder.swift */,
+				5682441F1DD84EC700590690 /* Components.swift */,
+				568244201DD84EC700590690 /* Configurable.swift */,
+				568244211DD84EC700590690 /* Extensions.swift */,
+				568244221DD84EC700590690 /* FacebookReactions.swift */,
+				568244231DD84EC700590690 /* Reaction.swift */,
+				568244241DD84EC700590690 /* ReactionAlignment.swift */,
+				568244251DD84EC700590690 /* ReactionButton.swift */,
+				568244261DD84EC700590690 /* ReactionButtonConfig.swift */,
+				568244271DD84EC700590690 /* ReactionFeedback.swift */,
+				568244281DD84EC700590690 /* ReactionFeedbackDelegate.swift */,
+				568244291DD84EC700590690 /* ReactionSelector.swift */,
+				5682442A1DD84EC700590690 /* ReactionSelectorConfig.swift */,
+				5682442B1DD84EC700590690 /* ReactionSummary.swift */,
+				5682442C1DD84EC700590690 /* ReactionSummaryConfig.swift */,
+				5682442D1DD84EC700590690 /* UIReactionControl.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		568244441DD84ECC00590690 /* Reactions */ = {
+			isa = PBXGroup;
+			children = (
+				5682440E1DD84EC700590690 /* Resources */,
+				5682441C1DD84EC700590690 /* Sources */,
+			);
+			name = Reactions;
+			sourceTree = "<group>";
+		};
+		56B2B1641DD7FB1A00724D26 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				56B2B1651DD7FB1A00724D26 /* AkiraTextField.swift */,
+				56B2B1661DD7FB1A00724D26 /* HoshiTextField.swift */,
+				56B2B1671DD7FB1A00724D26 /* Info.plist */,
+				56B2B1681DD7FB1A00724D26 /* IsaoTextField.swift */,
+				56B2B1691DD7FB1A00724D26 /* JiroTextField.swift */,
+				56B2B16A1DD7FB1A00724D26 /* KaedeTextField.swift */,
+				56B2B16B1DD7FB1A00724D26 /* MadokaTextField.swift */,
+				56B2B16C1DD7FB1A00724D26 /* MinoruTextField.swift */,
+				56B2B16D1DD7FB1A00724D26 /* TextFieldEffects.h */,
+				56B2B16E1DD7FB1A00724D26 /* TextFieldsEffects.swift */,
+				56B2B16F1DD7FB1A00724D26 /* YokoTextField.swift */,
+				56B2B1701DD7FB1A00724D26 /* YoshikoTextField.swift */,
+			);
+			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
 		56B7ACBE1DD1AD5900AE0ACB /* Modals */ = {
@@ -321,6 +458,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 563F10B51DCCADAC00CC425E;
 			productRefGroup = 563F10BF1DCCADAC00CC425E /* Products */;
@@ -338,10 +476,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				563F10CC1DCCADAC00CC425E /* LaunchScreen.storyboard in Resources */,
+				568244321DD84EC700590690 /* Facebook.xcassets in Resources */,
+				5682442E1DD84EC700590690 /* FacebookReactionLocalizable.strings in Resources */,
+				5682442F1DD84EC700590690 /* FeedbackLocalizable.strings in Resources */,
+				568244301DD84EC700590690 /* ReactionSummaryLocalizable.strings in Resources */,
 				56B7ACBB1DD1AC0600AE0ACB /* GoogleService-Info.plist in Resources */,
+				56B2B1731DD7FB1A00724D26 /* Info.plist in Resources */,
 				563F10C91DCCADAC00CC425E /* Assets.xcassets in Resources */,
 				56F912491DD57FDD00BEC84A /* Info.plist in Resources */,
 				563F10C71DCCADAC00CC425E /* Main.storyboard in Resources */,
+				568244311DD84EC700590690 /* ReactionSummaryLocalizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,21 +547,36 @@
 				5641EF8D1DD6DDA800212D69 /* FirstSetGoalTableViewController.swift in Sources */,
 				56F911561DD485C000BEC84A /* EachGoalTableViewCell.swift in Sources */,
 				56F9123A1DD57FDD00BEC84A /* FSCalendar+Deprecated.m in Sources */,
+				56B2B1741DD7FB1A00724D26 /* IsaoTextField.swift in Sources */,
+				56B2B1791DD7FB1A00724D26 /* TextFieldsEffects.swift in Sources */,
+				56B2B1781DD7FB1A00724D26 /* MinoruTextField.swift in Sources */,
 				56F9123B1DD57FDD00BEC84A /* FSCalendar.m in Sources */,
+				568244341DD84EC700590690 /* ComponentBuilder.swift in Sources */,
 				5694F0B51DCCBBF300716516 /* Goal.swift in Sources */,
+				56B2B17A1DD7FB1A00724D26 /* YokoTextField.swift in Sources */,
+				568244371DD84EC700590690 /* Extensions.swift in Sources */,
 				56F912441DD57FDD00BEC84A /* FSCalendarExtensions.m in Sources */,
 				56F9124C1DD5868C00BEC84A /* CalendarViewController.swift in Sources */,
 				56F912461DD57FDD00BEC84A /* FSCalendarScopeHandle.m in Sources */,
+				56B2B1751DD7FB1A00724D26 /* JiroTextField.swift in Sources */,
 				5641EF8F1DD6EBC600212D69 /* SecSetGoalTableViewController.swift in Sources */,
+				56B2B1711DD7FB1A00724D26 /* AkiraTextField.swift in Sources */,
 				563F10C41DCCADAC00CC425E /* ViewController.swift in Sources */,
+				5682443F1DD84EC700590690 /* ReactionSelector.swift in Sources */,
+				56B2B17B1DD7FB1A00724D26 /* YoshikoTextField.swift in Sources */,
 				56F912471DD57FDD00BEC84A /* FSCalendarStickyHeader.m in Sources */,
 				56F912431DD57FDD00BEC84A /* FSCalendarDelegateProxy.m in Sources */,
 				56F912451DD57FDD00BEC84A /* FSCalendarHeaderView.m in Sources */,
+				56B2B1761DD7FB1A00724D26 /* KaedeTextField.swift in Sources */,
 				56F912481DD57FDD00BEC84A /* FSCalendarWeekdayView.m in Sources */,
 				56F912411DD57FDD00BEC84A /* FSCalendarCollectionViewLayout.m in Sources */,
 				56F9123D1DD57FDD00BEC84A /* FSCalendarAppearance.m in Sources */,
 				56F9123E1DD57FDD00BEC84A /* FSCalendarCalculator.m in Sources */,
 				56F10F2B1DD419A0002737A0 /* EachGoalViewController.swift in Sources */,
+				56B2B1721DD7FB1A00724D26 /* HoshiTextField.swift in Sources */,
+				568244331DD84EC700590690 /* CAReactionSummaryLayer.swift in Sources */,
+				5682443E1DD84EC700590690 /* ReactionFeedbackDelegate.swift in Sources */,
+				568244381DD84EC700590690 /* FacebookReactions.swift in Sources */,
 				56B7ACBD1DD1AD4A00AE0ACB /* User.swift in Sources */,
 				5641EF911DD6FFB200212D69 /* TriSetGoalTableViewController.swift in Sources */,
 				56F912421DD57FDD00BEC84A /* FSCalendarConstants.m in Sources */,
@@ -425,11 +584,23 @@
 				56B7ACC41DD1FB6700AE0ACB /* ImageCollectionViewCell.swift in Sources */,
 				5694F0B71DCDA10100716516 /* GoalTableViewController.swift in Sources */,
 				56F9123C1DD57FDD00BEC84A /* FSCalendarAnimator.m in Sources */,
+				5682443C1DD84EC700590690 /* ReactionButtonConfig.swift in Sources */,
+				5682443A1DD84EC700590690 /* ReactionAlignment.swift in Sources */,
+				56B2B1771DD7FB1A00724D26 /* MadokaTextField.swift in Sources */,
 				5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */,
+				568244361DD84EC700590690 /* Configurable.swift in Sources */,
 				563F10C21DCCADAC00CC425E /* AppDelegate.swift in Sources */,
+				5682443D1DD84EC700590690 /* ReactionFeedback.swift in Sources */,
+				568244411DD84EC700590690 /* ReactionSummary.swift in Sources */,
+				5682443B1DD84EC700590690 /* ReactionButton.swift in Sources */,
 				563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */,
 				56F912401DD57FDD00BEC84A /* FSCalendarCollectionView.m in Sources */,
+				568244391DD84EC700590690 /* Reaction.swift in Sources */,
+				568244401DD84EC700590690 /* ReactionSelectorConfig.swift in Sources */,
+				568244351DD84EC700590690 /* Components.swift in Sources */,
+				568244431DD84EC700590690 /* UIReactionControl.swift in Sources */,
 				5641EF951DD7098D00212D69 /* FouCollectionViewCell.swift in Sources */,
+				568244421DD84EC700590690 /* ReactionSummaryConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +621,42 @@
 				563F10CB1DCCADAC00CC425E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5682440F1DD84EC700590690 /* FacebookReactionLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				568244101DD84EC700590690 /* Base */,
+				568244181DD84EC700590690 /* fr */,
+			);
+			name = FacebookReactionLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		568244111DD84EC700590690 /* FeedbackLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				568244121DD84EC700590690 /* Base */,
+				568244191DD84EC700590690 /* fr */,
+			);
+			name = FeedbackLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		568244131DD84EC700590690 /* ReactionSummaryLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				568244141DD84EC700590690 /* Base */,
+				5682441A1DD84EC700590690 /* fr */,
+			);
+			name = ReactionSummaryLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		568244151DD84EC700590690 /* ReactionSummaryLocalizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				568244161DD84EC700590690 /* Base */,
+				5682441B1DD84EC700590690 /* fr */,
+			);
+			name = ReactionSummaryLocalizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

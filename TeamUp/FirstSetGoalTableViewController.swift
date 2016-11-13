@@ -12,7 +12,6 @@ class FirstSetGoalTableViewController: UITableViewController {
 
     @IBOutlet weak var firstTextLabel: UILabel!
     @IBOutlet weak var goalTitleTextField: UITextField!
-    @IBOutlet weak var firstTextLabel2: UILabel!
     @IBOutlet weak var secTextLabel: UILabel!
     @IBOutlet weak var goalDayLabel: UILabel!
     @IBOutlet weak var goalDaySlider: UISlider!
@@ -34,8 +33,6 @@ class FirstSetGoalTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.firstTextLabel.text = "先為自己的目標訂個名字吧！"
-        goalTitleTextField.underlined()
-        self.firstTextLabel2.text = "例如：考上臺大 或 業績達成"
         self.secTextLabel.text = "達成這個目標需要幾天呢？"
         
         // NEXT Button
@@ -165,18 +162,5 @@ extension FirstSetGoalTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
-    }
-}
-
-// Text Field with underline
-extension UITextField {
-    func underlined(){
-        let border = CALayer()
-        let width = CGFloat(1.0)
-        border.borderColor = UIColor.lightGray.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
-        border.borderWidth = width
-        self.layer.addSublayer(border)
-        self.layer.masksToBounds = true
     }
 }
