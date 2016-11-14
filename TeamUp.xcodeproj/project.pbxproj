@@ -19,6 +19,7 @@
 		5641EF911DD6FFB200212D69 /* TriSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */; };
 		5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */; };
 		5641EF951DD7098D00212D69 /* FouCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */; };
+		567D2B231DD942E1007FFDC5 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567D2B221DD942E1007FFDC5 /* DOFavoriteButton.swift */; };
 		5682442E1DD84EC700590690 /* FacebookReactionLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5682440F1DD84EC700590690 /* FacebookReactionLocalizable.strings */; };
 		5682442F1DD84EC700590690 /* FeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 568244111DD84EC700590690 /* FeedbackLocalizable.strings */; };
 		568244301DD84EC700590690 /* ReactionSummaryLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 568244131DD84EC700590690 /* ReactionSummaryLocalizable.strings */; };
@@ -94,6 +95,7 @@
 		5641EF901DD6FFB200212D69 /* TriSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriSetGoalTableViewController.swift; sourceTree = "<group>"; };
 		5641EF921DD707ED00212D69 /* FouSetGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouSetGoalTableViewController.swift; sourceTree = "<group>"; };
 		5641EF941DD7098D00212D69 /* FouCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FouCollectionViewCell.swift; sourceTree = "<group>"; };
+		567D2B221DD942E1007FFDC5 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		568244101DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/FacebookReactionLocalizable.strings; sourceTree = "<group>"; };
 		568244121DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/FeedbackLocalizable.strings; sourceTree = "<group>"; };
 		568244141DD84EC700590690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ReactionSummaryLocalizable.strings; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		563F10B51DCCADAC00CC425E = {
 			isa = PBXGroup;
 			children = (
+				567D2B241DD942FB007FFDC5 /* DOFavoriteButton */,
 				568244441DD84ECC00590690 /* Reactions */,
 				56B2B1641DD7FB1A00724D26 /* TextFieldEffects */,
 				56F9121A1DD57FDD00BEC84A /* FSCalendar */,
@@ -248,6 +251,14 @@
 				56B7ACC31DD1FB6700AE0ACB /* ImageCollectionViewCell.swift */,
 			);
 			name = Old;
+			sourceTree = "<group>";
+		};
+		567D2B241DD942FB007FFDC5 /* DOFavoriteButton */ = {
+			isa = PBXGroup;
+			children = (
+				567D2B221DD942E1007FFDC5 /* DOFavoriteButton.swift */,
+			);
+			name = DOFavoriteButton;
 			sourceTree = "<group>";
 		};
 		5682440E1DD84EC700590690 /* Resources */ = {
@@ -586,6 +597,7 @@
 				56F9123C1DD57FDD00BEC84A /* FSCalendarAnimator.m in Sources */,
 				5682443C1DD84EC700590690 /* ReactionButtonConfig.swift in Sources */,
 				5682443A1DD84EC700590690 /* ReactionAlignment.swift in Sources */,
+				567D2B231DD942E1007FFDC5 /* DOFavoriteButton.swift in Sources */,
 				56B2B1771DD7FB1A00724D26 /* MadokaTextField.swift in Sources */,
 				5641EF931DD707ED00212D69 /* FouSetGoalTableViewController.swift in Sources */,
 				568244361DD84EC700590690 /* Configurable.swift in Sources */,

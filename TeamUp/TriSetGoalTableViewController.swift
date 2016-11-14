@@ -10,6 +10,8 @@ import UIKit
 
 class TriSetGoalTableViewController: UITableViewController {
 
+    // MARK: Properties
+    var goal: Goal?
     @IBOutlet weak var triTextLabel: UILabel!
     @IBOutlet weak var monTextField: UITextField!
     @IBOutlet weak var tueTextField: UITextField!
@@ -30,15 +32,8 @@ class TriSetGoalTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.triTextLabel.text = "再為剛剛選擇的星期，制訂行動計畫吧！如果每次都一樣，就填上一天後，勾選『每次都一樣』"
-//        self.monTextField.underlined()
-//        self.tueTextField.underlined()
-//        self.wedTextField.underlined()
-//        self.thuTextField.underlined()
-//        self.friTextField.underlined()
-//        self.satTextField.underlined()
-//        self.sunTextField.underlined()
+        print("goal3: ===================\(goal)=======================")
+        self.triTextLabel.text = "再為剛剛選擇的星期，制訂行動計畫吧！如果每次都一樣，就填上一天後，勾選『每次都一樣』"     
         
         // NEXT Button
         let nextButton = UIButton(type: .system)
@@ -134,16 +129,21 @@ class TriSetGoalTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toFou" {
+            let dvc = segue.destination as? FouSetGoalTableViewController
+            guard let text1 = monTextField.text else { return }
+            
+            if var goal = goal {
+                goal.monGoal = text1
+                dvc?.goal = goal
+                print("goal3-segue: ===================\(goal)=======================")
+            }
+        }
     }
-    */
-
+    
 }
 
 extension TriSetGoalTableViewController: UITextFieldDelegate {

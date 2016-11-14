@@ -10,6 +10,8 @@ import UIKit
 
 class SecSetGoalTableViewController: UITableViewController {
 
+    // MARK: Properties
+    var goal: Goal?
     @IBOutlet weak var triTextLabel: UILabel!
     
     // 回到主畫面
@@ -23,7 +25,7 @@ class SecSetGoalTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("goal2: ===================\(goal)=======================")
         self.triTextLabel.text = "以週為單位，選定哪幾天要行動吧！\n如果每天都做，就把『全選』勾起來。"
         
         // NEXT Button
@@ -119,14 +121,14 @@ class SecSetGoalTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toTri" {
+            let dvc = segue.destination as? TriSetGoalTableViewController
+            dvc?.goal = goal
+        }
     }
-    */
+    
 
 }

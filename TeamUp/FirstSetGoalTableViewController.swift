@@ -10,6 +10,8 @@ import UIKit
 
 class FirstSetGoalTableViewController: UITableViewController {
 
+    // MARK: Properties
+    var goal: Goal?
     @IBOutlet weak var firstTextLabel: UILabel!
     @IBOutlet weak var goalTitleTextField: UITextField!
     @IBOutlet weak var secTextLabel: UILabel!
@@ -26,6 +28,13 @@ class FirstSetGoalTableViewController: UITableViewController {
     
     // 下一畫面
     @IBAction func next(_ sender: UIButton) {
+        guard let text = goalTitleTextField.text else { return }
+        guard let day = Int(goalDayLabel.text!) else { return }
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年M月d日 hh:mm:ss"
+        let curTime = dateFormatter.string(from: date)
+        goal = Goal(createdAt: curTime, image: "", goalTitle: text, restNum: day, memberNum: 1, continNum: 1)
         performSegue(withIdentifier: "toSec", sender: self)
     }
     
@@ -144,16 +153,14 @@ class FirstSetGoalTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toSec" {
+                let dvc = segue.destination as? SecSetGoalTableViewController
+                dvc?.goal = goal
+        }
     }
-    */
-
 }
 
 

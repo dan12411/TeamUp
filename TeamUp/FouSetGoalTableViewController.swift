@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class FouSetGoalTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    // MARK: Properties
+    var goal: Goal?
+    let ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
     @IBOutlet weak var fouTextLabel: UILabel!
     @IBOutlet weak var imageCollecView: UIView!
     @IBOutlet weak var collectionForImage: UICollectionView!
@@ -45,12 +49,22 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     }
     
     @IBAction func back(_ sender: UIButton) {
+        
+        guard let image = selectedImage else {return}
+        
+        if var goal = goal {
+            goal.image = image
+            let goalItemRef = self.ref.childByAutoId()
+            // 4. 存入項目(Use setValue(_:) to save data to the database)
+            goalItemRef.setValue(goal.toAnyObject())
+        }
         dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("goal4: ===================\(goal)=======================")
         self.fouTextLabel.text = "挑選適合的圖來當封面吧！"
         
         // Let's Go Button
@@ -100,7 +114,7 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedImage = imageArray[indexPath.row]
-        let cell = collectionView.cellForItem(at: indexPath) as! ImageCollectionViewCell
+        let cell = collectionForImage.cellForItem(at: indexPath) as! FouCollectionViewCell
         cell.alpha = 0.4
     }
 
@@ -178,14 +192,11 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//       
+//    }
+    
 
 }

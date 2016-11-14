@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
 
-    var goals: [goal] = []
+    var goals: [Goal] = []
     var ref: FIRDatabaseReference!
 //    let goals: [goal] = [
 //        goal(image:"Hunter.jpg", goalTitle: "熱血健身", restNum: 36, memberNum: 6, continNum: 24),
@@ -41,16 +41,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 1. Attach a listener to receive updates
         ref.observe(.value, with: { snapshot in
             // 2. Store the latest version of the data in a local variable
-            var newItems: [goal] = []
+            var newItems: [Goal] = []
             
             // 3. loop through the grocery items
             for item in snapshot.children {
                 // 4.
-                let goalItem = goal(snapshot: item as! FIRDataSnapshot)
+                let goalItem = Goal(snapshot: item as! FIRDataSnapshot)
                 newItems.append(goalItem)
             }
             // 5. Reassign items to the latest version of the data
             self.goals = newItems
+            self.goalTableView.reloadData()
+        })
+        
+        //MARK: - Sorting the Grocery List(排序資料!!)
+        // call queryOrdered(byChild:) on the Firebase reference, which takes a key to order by.
+        ref?.queryOrdered(byChild: "createdAt").observe(.value, with: { snapshot in
+            var newItems: [Goal] = []
+            
+            for item in snapshot.children {
+                let goalItem = Goal(snapshot: item as! FIRDataSnapshot)
+                newItems.append(goalItem)
+            }
+            
+            self.goals = newItems
+            self.goals = self.goals.reversed()
             self.goalTableView.reloadData()
         })
         

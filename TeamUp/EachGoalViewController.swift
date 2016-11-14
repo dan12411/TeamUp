@@ -11,12 +11,22 @@ import UIKit
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Properties
-    var goal: goal?
+    var goal: Goal?
     @IBOutlet weak var eachGoalTableView: UITableView!
     @IBOutlet weak var restDayLabel: UILabel!
     @IBOutlet weak var memberNumLabel: UILabel!
     @IBOutlet weak var goalListLabel: UILabel!
     var userName: String?
+    
+    @IBAction func checkAction(_ sender: DOFavoriteButton) {
+        if sender.isSelected {
+            // deselect
+            sender.deselect()
+        } else {
+            // select with animation
+            sender.select()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +35,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         if let goal = goal {
             restDayLabel.text = String(describing: goal.restNum) + "天"
             memberNumLabel.text = String(describing: goal.memberNum) + "人"
+            goalListLabel.text = goal.monGoal
         }
 
         // Remove the separators of the empty rows
