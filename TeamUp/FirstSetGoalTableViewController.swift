@@ -32,7 +32,7 @@ class FirstSetGoalTableViewController: UITableViewController {
         guard let day = Int(goalDayLabel.text!) else { return }
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年M月d日 hh:mm:ss"
+        dateFormatter.dateFormat = "yyyy年M月d日 HH:mm:ss"
         let curTime = dateFormatter.string(from: date)
         goal = Goal(createdAt: curTime, image: "", goalTitle: text, restNum: day, memberNum: 1, continNum: 1)
         performSegue(withIdentifier: "toSec", sender: self)
@@ -87,7 +87,7 @@ class FirstSetGoalTableViewController: UITableViewController {
         let header = UIView(frame: CGRect(x: 0, y: 16, width: self.tableView.frame.size.width, height: 12.0))
         let label = UILabel(frame: header.frame)
         label.textColor = UIColor.lightGray
-        label.font = UIFont(name: "STHeitiTC-Light", size: 12)
+        label.font = UIFont(name: "STHeitiTC-Light", size: 14)
         label.text = "1/4"
         label.frame = header.frame
         label.textAlignment = NSTextAlignment.center

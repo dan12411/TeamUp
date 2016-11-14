@@ -15,6 +15,10 @@ class EachGoalTableViewCell: UITableViewCell, ReactionFeedbackDelegate {
     @IBOutlet weak var goalProgress: UIProgressView!
     @IBOutlet weak var userBestContiDays: UILabel!
     @IBOutlet weak var userCurrentDays: UILabel!
+    @IBOutlet weak var currentDays: UILabel!
+    @IBOutlet weak var bestContiDays: UILabel!
+    @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var masterImage: UIImageView!
     
     // Facebook like
     // button

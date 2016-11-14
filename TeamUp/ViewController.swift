@@ -14,7 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: Properties
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-
+    @IBOutlet weak var userView: UIView!
+    
     var goals: [Goal] = []
     var ref: FIRDatabaseReference!
 //    let goals: [goal] = [
@@ -70,8 +71,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
         
         // 顯示使用者名稱、頭像
-        self.userName.text = "Aragaki Yui"
-        self.userImage.image = UIImage(named: "gakki")
+        self.userName.text = "洪德晟"
+        self.userImage.image = UIImage(named: "TC")
         
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

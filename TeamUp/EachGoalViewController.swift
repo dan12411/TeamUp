@@ -17,12 +17,32 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var memberNumLabel: UILabel!
     @IBOutlet weak var goalListLabel: UILabel!
     var userName: String?
+    let myGreenColor = UIColor(red: 123.0/255.0, green: 185.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     
     @IBAction func checkAction(_ sender: DOFavoriteButton) {
+        
+        let cell = eachGoalTableView.cellForRow(at: [0,0]) as! EachGoalTableViewCell
+        
         if sender.isSelected {
+            cell.userNameLabel.textColor = UIColor.darkGray
+            cell.bestContiDays.textColor = UIColor.darkGray
+            cell.currentDays.textColor = UIColor.darkGray
+            cell.userCurrentDays.textColor = UIColor.darkGray
+            cell.userBestContiDays.textColor = UIColor.darkGray
+            cell.goalProgress.progressTintColor = UIColor.lightGray
+            cell.goalProgress.trackTintColor = UIColor.darkGray
+            cell.checkImage.isHidden = true
             // deselect
             sender.deselect()
         } else {
+            cell.userNameLabel.textColor = myGreenColor
+            cell.bestContiDays.textColor = myGreenColor
+            cell.currentDays.textColor = myGreenColor
+            cell.userCurrentDays.textColor = myGreenColor
+            cell.userBestContiDays.textColor = myGreenColor
+            cell.goalProgress.progressTintColor = myGreenColor
+            cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
+            cell.checkImage.isHidden = false
             // select with animation
             sender.select()
         }
@@ -56,19 +76,55 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EachGoalTableViewCell
         
-        cell.userImage.image = UIImage(named: "gakki")
-        cell.userNameLabel.text = userName
-        cell.goalProgress.progress = 0.8
         cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 5)
-        cell.userBestContiDays.text = "30"
-        cell.userCurrentDays.text = "10"
-        return cell
+        
+        if indexPath.row == 0 {
+            cell.userImage.image = UIImage(named: "TC")
+            cell.userNameLabel.text = userName
+            cell.userBestContiDays.text = "30"
+            cell.userCurrentDays.text = "24"
+            cell.goalProgress.progress = 0.8
+            cell.masterImage.isHidden = false
+            return cell
+        } else if indexPath.row == 1  {
+            cell.userImage.image = UIImage(named: "Man")
+            cell.userNameLabel.text = "金城武"
+            cell.userBestContiDays.text = "30"
+            cell.userCurrentDays.text = "9"
+            cell.goalProgress.progress = 0.3
+            return cell
+            
+        } else {
+            cell.userImage.image = UIImage(named: "gakki")
+            cell.userNameLabel.text = "新垣結衣"
+            cell.userBestContiDays.text = "30"
+            cell.userCurrentDays.text = "15"
+            cell.goalProgress.progress = 0.5
+            
+            // for checked
+            cell.userNameLabel.textColor = myGreenColor
+            cell.bestContiDays.textColor = myGreenColor
+            cell.currentDays.textColor = myGreenColor
+            cell.userCurrentDays.textColor = myGreenColor
+            cell.userBestContiDays.textColor = myGreenColor
+            cell.goalProgress.progressTintColor = myGreenColor
+            cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
+            cell.checkImage.isHidden = false
+            // checked 1st checker
+            cell.masterImage.image = UIImage(named: "Badge")
+            cell.masterImage.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            cell.masterImage.isHidden = false
+            
+            
+            return cell
+        }
     }
     
     /*

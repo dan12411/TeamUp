@@ -138,7 +138,7 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
         let header = UIView(frame: CGRect(x: 0, y: 16, width: self.tableView.frame.size.width, height: 12.0))
         let label = UILabel(frame: header.frame)
         label.textColor = UIColor.lightGray
-        label.font = UIFont(name: "STHeitiTC-Light", size: 12)
+        label.font = UIFont(name: "STHeitiTC-Light", size: 14)
         label.text = "4/4"
         label.frame = header.frame
         label.textAlignment = NSTextAlignment.center

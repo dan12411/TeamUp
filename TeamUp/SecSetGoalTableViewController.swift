@@ -26,7 +26,7 @@ class SecSetGoalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("goal2: ===================\(goal)=======================")
-        self.triTextLabel.text = "以週為單位，選定哪幾天要行動吧！\n如果每天都做，就把『全選』勾起來。"
+        self.triTextLabel.text = "以週為單位，選定哪幾天要行動吧！如果每天都做，就把『全選』勾起來。"
         
         // NEXT Button
         let nextButton = UIButton(type: .system)
@@ -67,7 +67,7 @@ class SecSetGoalTableViewController: UITableViewController {
         let header = UIView(frame: CGRect(x: 0, y: 16, width: self.tableView.frame.size.width, height: 12.0))
         let label = UILabel(frame: header.frame)
         label.textColor = UIColor.lightGray
-        label.font = UIFont(name: "STHeitiTC-Light", size: 12)
+        label.font = UIFont(name: "STHeitiTC-Light", size: 14)
         label.text = "2/4"
         label.frame = header.frame
         label.textAlignment = NSTextAlignment.center
