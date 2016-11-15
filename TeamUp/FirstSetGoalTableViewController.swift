@@ -41,6 +41,10 @@ class FirstSetGoalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let barFont = UIFont(name: "STHeitiTC-Light", size: 20.0) {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
+        }
+        
         self.firstTextLabel.text = "先為自己的目標訂個名字吧！"
         self.secTextLabel.text = "達成這個目標需要幾天呢？"
         

@@ -32,6 +32,11 @@ class EditEachGoalTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        
+        if let barFont = UIFont(name: "STHeitiTC-Light", size: 20.0) {
+            self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
+        }
+        
         super.viewDidLoad()
         let controller = self.navigationController as! MyNavigationController
         goal = controller.goal

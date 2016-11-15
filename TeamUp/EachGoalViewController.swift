@@ -22,6 +22,29 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var userName: String?
     let myGreenColor = UIColor(red: 123.0/255.0, green: 185.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     
+    var reactionOne = [Reaction.facebook.angry]
+    var reactionTwo = [Reaction.facebook.love]
+    
+    @IBAction func pressLike(_ sender: ReactionButton!) {
+        // Get indexPath
+        var cell = (sender as AnyObject).superview
+        while cell is UITableViewCell == false {
+            cell = cell??.superview
+        }
+        let targetCell = cell as! UITableViewCell
+        if let indexPath = self.eachGoalTableView.indexPath(for: targetCell) {
+            if sender.isSelected {
+                // Add Reactions
+                if indexPath.row == 1 {
+                    return
+                } else if indexPath.row == 2 {
+                    reactionTwo.append(Reaction.facebook.like)
+                    eachGoalTableView.reloadData()
+                } else {return}
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         springForButton()
@@ -63,11 +86,12 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
             animation.toValue = NSValue(cgSize: CGSize(width: 1.02, height: 1.02))
             
-            animation.springBounciness = 20//[0-20] 弹力 越大则震动幅度越大
+            animation.springBounciness = 15 //[0-20] 弹力 越大则震动幅度越大
             animation.springSpeed = 20 //[0-20] 速度 越大则动画结束越快
             animation.autoreverses = true
             
-        animationForCheck.layer.pop_add(animation, forKey: "springColor")
+//        animationForCheck.layer.pop_add(animation, forKey: "springForCheck")
+        eachGoalTableView.layer.pop_add(animation, forKey: "TableMove")
         }
     }
     
@@ -80,7 +104,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             animation.springSpeed = 13 //[0-20] 速度 越大则动画结束越快
             animation.autoreverses = true
             
-            checkButton.layer.pop_add(animation, forKey: "springColor")
+            checkButton.layer.pop_add(animation, forKey: "springForButton")
         }
     }
     
@@ -124,8 +148,8 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.row == 0 {
             cell.userImage.image = UIImage(named: "TC")
             cell.userNameLabel.text = userName
-            cell.userBestContiDays.text = "30"
-            cell.userCurrentDays.text = "24"
+            cell.userBestContiDays.text = "24"
+            cell.userCurrentDays.text = "30"
             cell.goalProgress.progress = 0.8
             cell.masterImage.isHidden = false
             return cell
@@ -133,10 +157,10 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             // custom friends
             cell.userImage.image = UIImage(named: "Man")
             cell.userNameLabel.text = "金城武"
-            cell.userBestContiDays.text = "30"
-            cell.userCurrentDays.text = "9"
-            cell.goalProgress.progress = 0.3
-            cell.reactionSummary.reactions = [Reaction.facebook.angry, Reaction.facebook.sad]
+            cell.userBestContiDays.text = "15"
+            cell.userCurrentDays.text = "30"
+            cell.goalProgress.progress = 0.5
+            cell.reactionSummary.isHidden = true
             return cell
             
         } else {
@@ -144,9 +168,9 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell.userImage.image = UIImage(named: "gakki")
             cell.userNameLabel.text = "新垣結衣"
             cell.userBestContiDays.text = "30"
-            cell.userCurrentDays.text = "15"
-            cell.goalProgress.progress = 0.5
-            cell.reactionSummary.reactions = [Reaction.facebook.like, Reaction.facebook.love]
+            cell.userCurrentDays.text = "30"
+            cell.goalProgress.progress = 1
+            cell.reactionSummary.reactions = reactionTwo
             
             // for checked
             cell.userNameLabel.textColor = myGreenColor

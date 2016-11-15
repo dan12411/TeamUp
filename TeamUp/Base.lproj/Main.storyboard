@@ -38,7 +38,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wo3-YF-Ci1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="-582"/>
+            <point key="canvasLocation" x="1366" y="-693"/>
         </scene>
         <!--TeamUp-->
         <scene sceneID="tne-QT-ifu">
@@ -286,7 +286,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulk-er-TPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-582"/>
+            <point key="canvasLocation" x="2038" y="-693"/>
         </scene>
         <!--Each Goal View Controller-->
         <scene sceneID="ghw-sA-kYy">
@@ -611,7 +611,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="193" height="24"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq7-Ul-jBn">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="83" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="83" height="24"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="83" id="Osm-17-8JD"/>
                                                                             </constraints>
@@ -629,6 +629,9 @@
                                                                             </connections>
                                                                         </view>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="49C-sK-Wn8" firstAttribute="centerY" secondItem="uq7-Ul-jBn" secondAttribute="centerY" id="lRj-Mw-8Zs"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Mfc-to-dO4">
                                                                     <rect key="frame" x="0.0" y="26" width="184" height="20"/>
@@ -689,6 +692,7 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="jTf-wc-Trm" secondAttribute="trailing" id="MMg-GO-89B"/>
+                                                                        <constraint firstItem="PAk-x0-mpe" firstAttribute="top" secondItem="jTf-wc-Trm" secondAttribute="bottom" constant="2" id="Phz-Ls-hUb"/>
                                                                         <constraint firstItem="jTf-wc-Trm" firstAttribute="leading" secondItem="Mfc-to-dO4" secondAttribute="leading" id="Uug-dv-r0f"/>
                                                                         <constraint firstAttribute="trailing" secondItem="PAk-x0-mpe" secondAttribute="trailing" id="Zyx-bq-eBY"/>
                                                                         <constraint firstItem="PAk-x0-mpe" firstAttribute="leading" secondItem="Mfc-to-dO4" secondAttribute="leading" id="zVv-y9-c6C"/>
@@ -707,6 +711,7 @@
                                                             </constraints>
                                                             <connections>
                                                                 <action selector="facebookButtonReactionTouchedUpAction:" destination="h7K-yR-FKH" eventType="valueChanged" id="3xx-0M-go5"/>
+                                                                <action selector="pressLike:" destination="csM-ac-J0O" eventType="valueChanged" id="ZWg-lo-G7F"/>
                                                             </connections>
                                                         </view>
                                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBlack" translatesAutoresizingMaskIntoConstraints="NO" id="C6s-SK-s58">
@@ -777,6 +782,9 @@
                                     <constraint firstAttribute="width" constant="60" id="meJ-M5-qZU"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Group"/>
+                                <connections>
+                                    <segue destination="fa8-gi-0Zx" kind="show" id="tJC-QL-qMO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1455,7 +1463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMj-DH-Av0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="81"/>
+            <point key="canvasLocation" x="3484" y="-193"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wd1-6n-l3c">
@@ -1473,9 +1481,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOA-3T-6qY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735" y="81"/>
+            <point key="canvasLocation" x="2774" y="-193"/>
         </scene>
-        <!--New Goal-->
+        <!--Invite Friends-->
+        <scene sceneID="drq-G5-iUu">
+            <objects>
+                <viewController id="fa8-gi-0Zx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOW-iL-a4L"/>
+                        <viewControllerLayoutGuide type="bottom" id="fYs-4S-jdQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Sz-fz-zFn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Invite Friends" id="Xfm-Fp-l3D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dab-1q-sTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2774" y="251"/>
+        </scene>
+        <!--新增目標-->
         <scene sceneID="Zai-Mi-ODl">
             <objects>
                 <tableViewController id="RGT-PP-ySb" customClass="FirstSetGoalTableViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1634,7 +1661,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="New Goal" id="hlr-OQ-o71">
+                    <navigationItem key="navigationItem" title="新增目標" id="hlr-OQ-o71">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ZGH-Ph-6eR">
                             <connections>
                                 <action selector="backToViewController:" destination="RGT-PP-ySb" id="woe-NN-iFg"/>
@@ -1673,7 +1700,7 @@
             </objects>
             <point key="canvasLocation" x="1148" y="928"/>
         </scene>
-        <!--New Goal-->
+        <!--新增目標-->
         <scene sceneID="X4W-7c-uue">
             <objects>
                 <tableViewController id="EZT-Ng-9wv" customClass="SecSetGoalTableViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1835,7 +1862,7 @@
                             <outlet property="delegate" destination="EZT-Ng-9wv" id="Pv1-kQ-Sau"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Goal" id="lhR-Ll-eyV">
+                    <navigationItem key="navigationItem" title="新增目標" id="lhR-Ll-eyV">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="RET-tT-fku">
                             <connections>
                                 <action selector="backToViewController:" destination="EZT-Ng-9wv" id="aRq-OZ-4rN"/>
@@ -1851,7 +1878,7 @@
             </objects>
             <point key="canvasLocation" x="2554" y="928"/>
         </scene>
-        <!--New Goal-->
+        <!--新增目標-->
         <scene sceneID="B1C-ao-wnj">
             <objects>
                 <tableViewController id="5ep-KY-xIp" customClass="TriSetGoalTableViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -2315,7 +2342,7 @@
                             <outlet property="delegate" destination="5ep-KY-xIp" id="Pn1-Gd-mLp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Goal" id="cHO-HK-ZLq">
+                    <navigationItem key="navigationItem" title="新增目標" id="cHO-HK-ZLq">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="eGq-M5-uie">
                             <connections>
                                 <action selector="backToViewController:" destination="5ep-KY-xIp" id="WHu-Vb-CF3"/>
@@ -2338,7 +2365,7 @@
             </objects>
             <point key="canvasLocation" x="3270" y="929"/>
         </scene>
-        <!--New Goal-->
+        <!--新增目標-->
         <scene sceneID="b5M-oQ-VI2">
             <objects>
                 <tableViewController id="ft3-6D-knB" customClass="FouSetGoalTableViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -2519,7 +2546,7 @@
                             <outlet property="delegate" destination="ft3-6D-knB" id="HlB-uT-jGZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Goal" id="KKM-yx-Sb4">
+                    <navigationItem key="navigationItem" title="新增目標" id="KKM-yx-Sb4">
                         <barButtonItem key="rightBarButtonItem" systemItem="stop" id="AMC-KB-H0y">
                             <connections>
                                 <action selector="backToViewController:" destination="ft3-6D-knB" id="otd-FF-TR8"/>
@@ -2536,7 +2563,7 @@
             </objects>
             <point key="canvasLocation" x="4002" y="928"/>
         </scene>
-        <!--Edit Goal-->
+        <!--編輯目標-->
         <scene sceneID="wtO-HP-qRh">
             <objects>
                 <tableViewController id="ZeS-4W-WYR" customClass="EditEachGoalTableViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -3128,7 +3155,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Edit Goal" id="p7u-l0-I6X">
+                    <navigationItem key="navigationItem" title="編輯目標" id="p7u-l0-I6X">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="RdF-jX-p92">
                             <connections>
                                 <action selector="backToViewController:" destination="ZeS-4W-WYR" id="TNy-zs-eZU"/>
@@ -3157,7 +3184,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwI-ds-djw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3486" y="-433"/>
+            <point key="canvasLocation" x="3502" y="-693"/>
         </scene>
         <!--My Navigation Controller-->
         <scene sceneID="SYb-9d-sdh">
@@ -3175,7 +3202,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT2-52-csV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="-433"/>
+            <point key="canvasLocation" x="2814" y="-693"/>
         </scene>
     </scenes>
     <resources>

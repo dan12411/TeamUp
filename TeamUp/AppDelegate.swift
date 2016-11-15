@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 88.0/255.0, green: 178.0/255.0, blue: 220.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
         
-        if let barFont = UIFont(name: "SignPainter", size: 30.0) {
-            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
-        }
+//        if let barFont = UIFont(name: "SignPainter", size: 30.0) {
+//            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
+//        }
         
         // Change the status bar's appearance
         UIApplication.shared.statusBarStyle = .lightContent
