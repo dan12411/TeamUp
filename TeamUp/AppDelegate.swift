@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRDatabase.database().persistenceEnabled = true
         
         // Change NavigationBar color & font
-        UINavigationBar.appearance().barTintColor = UIColor(red: 57.0/255.0, green: 158.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 88.0/255.0, green: 178.0/255.0, blue: 220.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.white
         
         if let barFont = UIFont(name: "SignPainter", size: 30.0) {

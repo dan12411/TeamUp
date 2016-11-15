@@ -40,7 +40,7 @@ class EachGoalTableViewCell: UITableViewCell, ReactionFeedbackDelegate {
     // summary
     @IBOutlet weak var reactionSummary: ReactionSummary! {
         didSet {
-            reactionSummary.reactions = [Reaction.facebook.like, Reaction.facebook.love, Reaction.facebook.haha]
+            reactionSummary.reactions = [Reaction.facebook.like, Reaction.facebook.love]
             reactionSummary.text = ""
 //            reactionSummary.setDefaultText(withTotalNumberOfPeople: 3, includingYou: true)
             reactionSummary.config    = ReactionSummaryConfig {
@@ -57,7 +57,7 @@ class EachGoalTableViewCell: UITableViewCell, ReactionFeedbackDelegate {
     // button
     @IBAction func facebookButtonReactionTouchedUpAction(_ sender: AnyObject) {
         if facebookReactionButton.isSelected == false {
-            facebookReactionButton.reaction   = Reaction.facebook.like
+            facebookReactionButton.reaction = Reaction.facebook.like
         }
     }
     
@@ -72,6 +72,8 @@ class EachGoalTableViewCell: UITableViewCell, ReactionFeedbackDelegate {
         //
         //        feedbackLabel.text = feedback?.localizedString
     }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

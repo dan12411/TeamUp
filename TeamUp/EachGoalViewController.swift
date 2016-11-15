@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,10 +17,19 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var restDayLabel: UILabel!
     @IBOutlet weak var memberNumLabel: UILabel!
     @IBOutlet weak var goalListLabel: UILabel!
+    @IBOutlet weak var animationForCheck: UIView!
+    @IBOutlet weak var checkButton: DOFavoriteButton!
     var userName: String?
     let myGreenColor = UIColor(red: 123.0/255.0, green: 185.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        springForButton()
+    }
+    
     @IBAction func checkAction(_ sender: DOFavoriteButton) {
+        
+        springForCheck()
         
         let cell = eachGoalTableView.cellForRow(at: [0,0]) as! EachGoalTableViewCell
         
@@ -45,6 +55,32 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell.checkImage.isHidden = false
             // select with animation
             sender.select()
+        }
+    }
+    
+    // POP for animation
+    func springForCheck() {
+        if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
+            animation.toValue = NSValue(cgSize: CGSize(width: 1.02, height: 1.02))
+            
+            animation.springBounciness = 20//[0-20] 弹力 越大则震动幅度越大
+            animation.springSpeed = 20 //[0-20] 速度 越大则动画结束越快
+            animation.autoreverses = true
+            
+        animationForCheck.layer.pop_add(animation, forKey: "springColor")
+        }
+    }
+    
+    // POP for animation
+    func springForButton() {
+        if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
+            animation.toValue = NSValue(cgSize: CGSize(width: 1.3, height: 1.3))
+            
+            animation.springBounciness = 20 //[0-20] 弹力 越大则震动幅度越大
+            animation.springSpeed = 13 //[0-20] 速度 越大则动画结束越快
+            animation.autoreverses = true
+            
+            checkButton.layer.pop_add(animation, forKey: "springColor")
         }
     }
     
@@ -94,19 +130,23 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell.masterImage.isHidden = false
             return cell
         } else if indexPath.row == 1  {
+            // custom friends
             cell.userImage.image = UIImage(named: "Man")
             cell.userNameLabel.text = "金城武"
             cell.userBestContiDays.text = "30"
             cell.userCurrentDays.text = "9"
             cell.goalProgress.progress = 0.3
+            cell.reactionSummary.reactions = [Reaction.facebook.angry, Reaction.facebook.sad]
             return cell
             
         } else {
+            // custom friends
             cell.userImage.image = UIImage(named: "gakki")
             cell.userNameLabel.text = "新垣結衣"
             cell.userBestContiDays.text = "30"
             cell.userCurrentDays.text = "15"
             cell.goalProgress.progress = 0.5
+            cell.reactionSummary.reactions = [Reaction.facebook.like, Reaction.facebook.love]
             
             // for checked
             cell.userNameLabel.textColor = myGreenColor
@@ -127,14 +167,17 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "editGoal" {
+            if let dvc = segue.destination as? MyNavigationController {
+                dvc.goal = goal
+            }
+        }
+
     }
-    */
+ 
+    
 
 }

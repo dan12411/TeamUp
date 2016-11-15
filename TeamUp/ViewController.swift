@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import pop
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userView: UIView!
+    @IBOutlet weak var addGoalButton: UIButton!
     
     var goals: [Goal] = []
     var ref: FIRDatabaseReference!
@@ -26,6 +28,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var goalTableView: UITableView!
     
+    // POP for animation
+    func springPosition() {
+        if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
+            animation.toValue = NSValue(cgSize: CGSize(width: 1.3, height: 1.3))
+            
+            animation.springBounciness = 20 //[0-20] 弹力 越大则震动幅度越大
+            animation.springSpeed = 13 //[0-20] 速度 越大则动画结束越快
+            animation.autoreverses = true
+            
+            addGoalButton.layer.pop_add(animation, forKey: "springColor")
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        springPosition()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +124,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "openDetail" {

@@ -41,14 +41,14 @@ extension Reaction {
     }
 
     /// The facebook's "haha" reaction.
-    public static var haha: Reaction {
-      return reactionWithId("haha")
-    }
+//    public static var haha: Reaction {
+//      return reactionWithId("haha")
+//    }
 
     /// The facebook's "wow" reaction.
-    public static var wow: Reaction {
-      return reactionWithId("wow")
-    }
+//    public static var wow: Reaction {
+//      return reactionWithId("wow")
+//    }
 
     /// The facebook's "sad" reaction.
     public static var sad: Reaction {
@@ -59,9 +59,19 @@ extension Reaction {
     public static var angry: Reaction {
       return reactionWithId("angry")
     }
+    
+    /// Add : The facebook's "lol" reaction.
+//    public static var lol: Reaction {
+//        return reactionWithId("lol")
+//    }
+    
+    /// Add : The facebook's "noti" reaction.
+//    public static var noti: Reaction {
+//        return reactionWithId("noti")
+//    }
 
     /// The list of standard facebook reactions in this order: `.like`, `.love`, `.haha`, `.wow`, `.sad`, `.angry`.
-    public static let all: [Reaction] = [facebook.like, facebook.love, facebook.haha, facebook.wow, facebook.sad, facebook.angry]
+    public static let all: [Reaction] = [facebook.like, facebook.love, facebook.sad, facebook.angry]
 
     // MARK: - Convenience Methods
 
@@ -77,6 +87,8 @@ extension Reaction {
         color = UIColor(red: 0.93, green: 0.23, blue: 0.33, alpha: 1)
       case "angry":
         color = UIColor(red: 0.96, green: 0.37, blue: 0.34, alpha: 1)
+      case "lol":
+        color = UIColor.black
       default:
         color = UIColor(red: 0.99, green: 0.84, blue: 0.38, alpha: 1)
       }
