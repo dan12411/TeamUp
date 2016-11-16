@@ -24,6 +24,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     
     var reactionOne = [Reaction.facebook.angry]
     var reactionTwo = [Reaction.facebook.love]
+    var reactionDefault: [[Reaction]] = [[],[],[],[],[],[]]
     
     @IBAction func pressLike(_ sender: ReactionButton!) {
         // Get indexPath
@@ -32,15 +33,12 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell = cell??.superview
         }
         let targetCell = cell as! UITableViewCell
+        
         if let indexPath = self.eachGoalTableView.indexPath(for: targetCell) {
             if sender.isSelected {
                 // Add Reactions
-                if indexPath.row == 1 {
-                    return
-                } else if indexPath.row == 2 {
-                    reactionTwo.append(Reaction.facebook.like)
+                    reactionDefault[indexPath.row].append(sender.reaction)
                     eachGoalTableView.reloadData()
-                } else {return}
             }
         }
     }
@@ -136,7 +134,12 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        if let goal = goal, let userImage = goal.usersImage {
+            return (userImage.count + 1)
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -144,47 +147,48 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EachGoalTableViewCell
         
         cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 5)
+        cell.reactionSummary.reactions = reactionDefault[indexPath.row]
         
         if indexPath.row == 0 {
-            cell.userImage.image = UIImage(named: "TC")
+            cell.userImage.image = UIImage(named: "User")
             cell.userNameLabel.text = userName
             cell.userBestContiDays.text = "24"
             cell.userCurrentDays.text = "30"
             cell.goalProgress.progress = 0.8
             cell.masterImage.isHidden = false
             return cell
-        } else if indexPath.row == 1  {
-            // custom friends
-            cell.userImage.image = UIImage(named: "Man")
-            cell.userNameLabel.text = "金城武"
-            cell.userBestContiDays.text = "15"
-            cell.userCurrentDays.text = "30"
-            cell.goalProgress.progress = 0.5
-            cell.reactionSummary.isHidden = true
-            return cell
+//        } else if indexPath.row == 1  {
+//            // custom friends
+//            cell.userImage.image = UIImage(named: "Man")
+//            cell.userNameLabel.text = "金城武"
+//            cell.userBestContiDays.text = "15"
+//            cell.userCurrentDays.text = "30"
+//            cell.goalProgress.progress = 0.5
+//            cell.reactionSummary.isHidden = true
+//            return cell
             
         } else {
+            print("================\(goal)====================")
             // custom friends
-            cell.userImage.image = UIImage(named: "gakki")
-            cell.userNameLabel.text = "新垣結衣"
-            cell.userBestContiDays.text = "30"
+            cell.userImage.image = UIImage(named: (goal?.usersImage?[indexPath.row - 1])!)
+            cell.userNameLabel.text = goal?.usersName?[indexPath.row - 1]
+            cell.userBestContiDays.text = goal?.userBestContiDays?[indexPath.row - 1]
             cell.userCurrentDays.text = "30"
-            cell.goalProgress.progress = 1
-            cell.reactionSummary.reactions = reactionTwo
+            cell.goalProgress.progress = (goal?.goalProgress?[indexPath.row - 1])!
             
-            // for checked
-            cell.userNameLabel.textColor = myGreenColor
-            cell.bestContiDays.textColor = myGreenColor
-            cell.currentDays.textColor = myGreenColor
-            cell.userCurrentDays.textColor = myGreenColor
-            cell.userBestContiDays.textColor = myGreenColor
-            cell.goalProgress.progressTintColor = myGreenColor
-            cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
-            cell.checkImage.isHidden = false
-            // checked 1st checker
-            cell.masterImage.image = UIImage(named: "Badge")
-            cell.masterImage.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-            cell.masterImage.isHidden = false
+//            // for checked
+//            cell.userNameLabel.textColor = myGreenColor
+//            cell.bestContiDays.textColor = myGreenColor
+//            cell.currentDays.textColor = myGreenColor
+//            cell.userCurrentDays.textColor = myGreenColor
+//            cell.userBestContiDays.textColor = myGreenColor
+//            cell.goalProgress.progressTintColor = myGreenColor
+//            cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
+//            cell.checkImage.isHidden = false
+//            // checked 1st checker
+//            cell.masterImage.image = UIImage(named: "Badge")
+//            cell.masterImage.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+//            cell.masterImage.isHidden = false
             
             
             return cell

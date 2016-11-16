@@ -40,7 +40,7 @@ class EachGoalTableViewCell: UITableViewCell, ReactionFeedbackDelegate {
     // summary
     @IBOutlet weak var reactionSummary: ReactionSummary! {
         didSet {
-            reactionSummary.reactions = [Reaction.facebook.like]
+//            reactionSummary.reactions = [Reaction.facebook.like]
             reactionSummary.text = ""
 //            reactionSummary.setDefaultText(withTotalNumberOfPeople: 3, includingYou: true)
             reactionSummary.config    = ReactionSummaryConfig {

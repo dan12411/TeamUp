@@ -128,6 +128,7 @@
 		5694F0B61DCDA10100716516 /* GoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 		56A199661DD9E49F0075857E /* EditEachGoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEachGoalTableViewController.swift; sourceTree = "<group>"; };
 		56A199681DDAA8C30075857E /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		56A7DA9F1DDC6DD6005C3627 /* TeamUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamUp.entitlements; sourceTree = "<group>"; };
 		56B2B1651DD7FB1A00724D26 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		56B2B1661DD7FB1A00724D26 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		56B2B1671DD7FB1A00724D26 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 		563F10C01DCCADAC00CC425E /* TeamUp */ = {
 			isa = PBXGroup;
 			children = (
+				56A7DA9F1DDC6DD6005C3627 /* TeamUp.entitlements */,
 				56B7ACBE1DD1AD5900AE0ACB /* Modals */,
 				56B7ACC01DD1AFDD00AE0ACB /* Controllers */,
 				56B7ACBF1DD1AFC300AE0ACB /* Layouts */,
@@ -465,6 +467,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 8H7X36TF25;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -729,6 +736,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Debug;
 		};
@@ -771,6 +779,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

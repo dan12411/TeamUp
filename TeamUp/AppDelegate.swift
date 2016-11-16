@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 應用程式啟動時連接 Firebase
         FIRApp.configure()
         FIRDatabase.database().persistenceEnabled = true
+        let goalsRef = FIRDatabase.database().reference(withPath: "TeamUp-goals")
+        goalsRef.keepSynced(true)
         
         // Change NavigationBar color & font
         UINavigationBar.appearance().barTintColor = UIColor(red: 88.0/255.0, green: 178.0/255.0, blue: 220.0/255.0, alpha: 1.0)

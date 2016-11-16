@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         goalTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         // Change the color of the separator
-        goalTableView.separatorColor = UIColor.clear
+        goalTableView.separatorColor = UIColor(red: 232.0/255.0, green: 232.0/255.0, blue: 232.0/255.0, alpha: 1.0)
         
         ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
         
@@ -94,8 +94,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
         
         // 顯示使用者名稱、頭像
-        self.userName.text = "洪德晟"
-        self.userImage.image = UIImage(named: "TC")
+        self.userName.text = "張豪歐"
+        self.userImage.image = UIImage(named: "User")
         
         // Remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
