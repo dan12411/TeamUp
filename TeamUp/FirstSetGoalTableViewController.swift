@@ -21,6 +21,11 @@ class FirstSetGoalTableViewController: UITableViewController {
         goalDayLabel.text = String(Int(sender.value))
     }
     
+    @IBAction func settingContent(_ sender: Any) {
+        goalTitleTextField.text = "英文讀書會"
+        print("================\(goalTitleTextField.text)====================")
+    }
+    
     // 回到主畫面
     @IBAction func backToViewController(_ sender: Any) {
         dismiss(animated: true, completion: nil)

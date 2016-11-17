@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // 詢問使用者是否願意收到來自TeamUp的通知
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+//            if granted {
+//                print("使用者同意了，每天都能收到來自TeamUp的貼心訊息")
+//            }
+//            else {
+//                print("使用者不同意!T^T")
+//            }
+//        
+//        })
+    
         
         // 應用程式啟動時連接 Firebase
         FIRApp.configure()

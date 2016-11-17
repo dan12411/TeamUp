@@ -20,6 +20,11 @@ class TriSetGoalTableViewController: UITableViewController {
     @IBOutlet weak var friTextField: UITextField!
     @IBOutlet weak var satTextField: UITextField!
     @IBOutlet weak var sunTextField: UITextField!
+    @IBAction func settingContent(_ sender: Any) {
+        monTextField.text = "讀英文小說兩頁"
+        wedTextField.text = "讀英文小說兩頁"
+        friTextField.text = "讀英文小說兩頁"
+    }
     
     // 回到主畫面
     @IBAction func backToViewController(_ sender: Any) {

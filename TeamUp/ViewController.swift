@@ -94,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
         
         // 顯示使用者名稱、頭像
-        self.userName.text = "張豪歐"
+        self.userName.text = "張豪歐(Web)"
         self.userImage.image = UIImage(named: "User")
         
         // Remove the title of the back button

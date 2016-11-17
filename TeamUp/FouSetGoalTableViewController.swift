@@ -17,17 +17,18 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     @IBOutlet weak var fouTextLabel: UILabel!
     @IBOutlet weak var imageCollecView: UIView!
     @IBOutlet weak var collectionForImage: UICollectionView!
+    @IBOutlet weak var checkImage: UIImageView!
     
     var selectedImage: String?
     
-    var imageArray = ["OnePiece", "OnePiece","OnePiece", "OnePiece", "OnePiece", "OnePiece"]
+    var imageArray = ["Study", "Weight","Bike", "Jog", "Swim", "Yoga"]
     
     @IBAction func sportImage(_ sender: UIButton) {
-        imageArray = ["OnePiece", "OnePiece","OnePiece", "OnePiece", "OnePiece", "OnePiece"]
+        imageArray = ["Study", "Weight","Bike", "Jog", "Swim", "Yoga"]
         collectionForImage.reloadData()
     }
     @IBAction func classImage(_ sender: UIButton) {
-        imageArray = ["Hunter", "Hunter", "Hunter", "Hunter", "Hunter", "Hunter"]
+        imageArray = ["Basketball", "Swift", "ROR", "Hunter", "OnePiece", "Hunter"]
         collectionForImage.reloadData()
     }
     @IBAction func workImage(_ sender: UIButton) {
@@ -116,6 +117,7 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
         selectedImage = imageArray[indexPath.row]
         let cell = collectionForImage.cellForItem(at: indexPath) as! FouCollectionViewCell
         cell.alpha = 0.4
+        checkImage.isHidden = false
     }
 
     // MARK: - TableViewDataSource

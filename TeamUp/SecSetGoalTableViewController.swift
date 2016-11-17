@@ -13,6 +13,15 @@ class SecSetGoalTableViewController: UITableViewController {
     // MARK: Properties
     var goal: Goal?
     @IBOutlet weak var triTextLabel: UILabel!
+    @IBOutlet weak var monButton: UIButton!
+    @IBOutlet weak var webButton: UIButton!
+    @IBOutlet weak var friButton: UIButton!
+    
+    @IBAction func settingContent(_ sender: Any) {
+        monButton.setImage(#imageLiteral(resourceName: "mon"), for: .normal)
+        webButton.setImage(#imageLiteral(resourceName: "wed"), for: .normal)
+        friButton.setImage(#imageLiteral(resourceName: "fri"), for: .normal)
+    }
     
     // 回到主畫面
     @IBAction func backToViewController(_ sender: Any) {

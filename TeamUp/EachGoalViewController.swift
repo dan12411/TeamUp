@@ -25,7 +25,10 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var reactionOne = [Reaction.facebook.angry]
     var reactionTwo = [Reaction.facebook.love]
     var reactionDefault: [[Reaction]] = [[],[],[],[],[],[]]
+    let usersBestDay = [89, 40, 60]
     
+    
+    // 選完表情按鈕
     @IBAction func pressLike(_ sender: ReactionButton!) {
         // Get indexPath
         var cell = (sender as AnyObject).superview
@@ -43,29 +46,23 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    // 讓 check 按鈕跳動
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         springForButton()
     }
     
+    //MARK: - 確認完成按鈕
+    // user按下確認鈕的動作
     @IBAction func checkAction(_ sender: DOFavoriteButton) {
         
+        // Animation for table
         springForCheck()
         
         let cell = eachGoalTableView.cellForRow(at: [0,0]) as! EachGoalTableViewCell
         
-        if sender.isSelected {
-            cell.userNameLabel.textColor = UIColor.darkGray
-            cell.bestContiDays.textColor = UIColor.darkGray
-            cell.currentDays.textColor = UIColor.darkGray
-            cell.userCurrentDays.textColor = UIColor.darkGray
-            cell.userBestContiDays.textColor = UIColor.darkGray
-            cell.goalProgress.progressTintColor = UIColor.lightGray
-            cell.goalProgress.trackTintColor = UIColor.darkGray
-            cell.checkImage.isHidden = true
-            // deselect
-            sender.deselect()
-        } else {
+        func checked() {
+            // for checked
             cell.userNameLabel.textColor = myGreenColor
             cell.bestContiDays.textColor = myGreenColor
             cell.currentDays.textColor = myGreenColor
@@ -74,9 +71,62 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell.goalProgress.progressTintColor = myGreenColor
             cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
             cell.checkImage.isHidden = false
+        }
+        
+        func unChecked() {
+            cell.userNameLabel.textColor = UIColor.darkGray
+            cell.bestContiDays.textColor = UIColor.darkGray
+            cell.currentDays.textColor = UIColor.darkGray
+            cell.userCurrentDays.textColor = UIColor.darkGray
+            cell.userBestContiDays.textColor = UIColor.darkGray
+            cell.goalProgress.progressTintColor = UIColor.lightGray
+            cell.goalProgress.trackTintColor = UIColor.darkGray
+            cell.checkImage.isHidden = true
+        }
+        
+        if sender.isSelected {
+            unChecked()
+            // deselect
+            sender.deselect()
+        } else {
+            checked()
             // select with animation
             sender.select()
         }
+    }
+    
+    // 其他user按下確認鈕的動作
+    @IBAction func usersForCheck(_ sender: Any) {
+        
+        // Animation for table
+        springForCheck()
+        
+        // Get indexPath
+        var cell = (sender as AnyObject).superview
+        while cell is UITableViewCell == false {
+            cell = cell??.superview
+        }
+        let targetCell = cell as! EachGoalTableViewCell
+        
+        if let indexPath = self.eachGoalTableView.indexPath(for: targetCell) {
+            
+            func checked() {
+                // for checked
+                targetCell.userNameLabel.textColor = myGreenColor
+                targetCell.bestContiDays.textColor = myGreenColor
+                targetCell.currentDays.textColor = myGreenColor
+                targetCell.userCurrentDays.textColor = myGreenColor
+                targetCell.userBestContiDays.textColor = myGreenColor
+                targetCell.goalProgress.progressTintColor = myGreenColor
+                targetCell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
+                targetCell.checkImage.isHidden = false
+            }
+            
+            // For cheange
+            checked()
+            
+        }
+        
     }
     
     // POP for animation
@@ -136,10 +186,10 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let goal = goal, let userImage = goal.usersImage {
-            return (userImage.count + 1)
-        } else {
-            return 1
+            return userImage.count
         }
+        
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -148,43 +198,27 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 5)
         cell.reactionSummary.reactions = reactionDefault[indexPath.row]
+      
         
         if indexPath.row == 0 {
             cell.userImage.image = UIImage(named: "User")
-            cell.userNameLabel.text = userName
-            cell.userBestContiDays.text = "24"
-            cell.userCurrentDays.text = "30"
-            cell.goalProgress.progress = 0.8
+            cell.userNameLabel.text = "張豪歐(Web)"
+            cell.userBestContiDays.text = "89"
+            cell.userCurrentDays.text = String(describing: usersBestDay.first)
+            cell.goalProgress.progress = 1
             cell.masterImage.isHidden = false
             return cell
-//        } else if indexPath.row == 1  {
-//            // custom friends
-//            cell.userImage.image = UIImage(named: "Man")
-//            cell.userNameLabel.text = "金城武"
-//            cell.userBestContiDays.text = "15"
-//            cell.userCurrentDays.text = "30"
-//            cell.goalProgress.progress = 0.5
-//            cell.reactionSummary.isHidden = true
-//            return cell
             
         } else {
-            print("================\(goal)====================")
-            // custom friends
             cell.userImage.image = UIImage(named: (goal?.usersImage?[indexPath.row - 1])!)
             cell.userNameLabel.text = goal?.usersName?[indexPath.row - 1]
             cell.userBestContiDays.text = goal?.userBestContiDays?[indexPath.row - 1]
-            cell.userCurrentDays.text = "30"
+            cell.userCurrentDays.text = String(usersBestDay[indexPath.row - 1])
             cell.goalProgress.progress = (goal?.goalProgress?[indexPath.row - 1])!
-            
-//            // for checked
-//            cell.userNameLabel.textColor = myGreenColor
-//            cell.bestContiDays.textColor = myGreenColor
-//            cell.currentDays.textColor = myGreenColor
-//            cell.userCurrentDays.textColor = myGreenColor
-//            cell.userBestContiDays.textColor = myGreenColor
-//            cell.goalProgress.progressTintColor = myGreenColor
-//            cell.goalProgress.trackTintColor = UIColor(red: 74.0/255.0, green: 107.0/255.0, blue: 58.0/255.0, alpha: 1.0)
-//            cell.checkImage.isHidden = false
+            return cell
+        }
+        
+
 //            // checked 1st checker
 //            cell.masterImage.image = UIImage(named: "Badge")
 //            cell.masterImage.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
@@ -192,7 +226,6 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             return cell
-        }
     }
     
     
@@ -205,7 +238,5 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
     }
- 
-    
-
 }
+ 
