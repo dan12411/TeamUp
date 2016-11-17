@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -587,7 +588,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7K-yR-FKH" id="TAq-Tw-6b6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCr-Ii-Q6f">
@@ -796,6 +797,16 @@
                                     <segue destination="fa8-gi-0Zx" kind="show" id="tJC-QL-qMO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlA-RG-hNh">
+                                <rect key="frame" x="10" y="597" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="3ac-Bf-59w"/>
+                                    <constraint firstAttribute="height" constant="60" id="Me4-xP-8Jb"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="finishGoal:" destination="csM-ac-J0O" eventType="touchUpInside" id="ke1-Jz-Jex"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -803,11 +814,13 @@
                             <constraint firstItem="3Yo-3U-NIM" firstAttribute="top" secondItem="k3f-5J-2mf" secondAttribute="bottom" id="7ap-9v-dNZ"/>
                             <constraint firstAttribute="trailing" secondItem="cee-xp-Q5q" secondAttribute="trailing" id="9zh-JM-uON"/>
                             <constraint firstItem="cee-xp-Q5q" firstAttribute="leading" secondItem="P3x-hK-zfU" secondAttribute="leading" id="F75-Sf-F0G"/>
+                            <constraint firstItem="RlA-RG-hNh" firstAttribute="leading" secondItem="P3x-hK-zfU" secondAttribute="leading" constant="10" id="Fb9-27-AEI"/>
                             <constraint firstItem="3Yo-3U-NIM" firstAttribute="leading" secondItem="P3x-hK-zfU" secondAttribute="leading" id="KH2-5l-cJK"/>
                             <constraint firstItem="18O-9T-PqO" firstAttribute="top" secondItem="cee-xp-Q5q" secondAttribute="bottom" constant="16" id="WOm-Ep-87v"/>
                             <constraint firstItem="wMT-ul-b8R" firstAttribute="top" secondItem="18O-9T-PqO" secondAttribute="bottom" id="Yav-dK-c60"/>
                             <constraint firstItem="wMT-ul-b8R" firstAttribute="top" secondItem="9Ns-RG-GLp" secondAttribute="bottom" constant="10" id="b8k-hc-L7I"/>
                             <constraint firstAttribute="trailing" secondItem="18O-9T-PqO" secondAttribute="trailing" id="gGS-fE-74A"/>
+                            <constraint firstItem="wMT-ul-b8R" firstAttribute="top" secondItem="RlA-RG-hNh" secondAttribute="bottom" constant="10" id="kDO-1R-iDV"/>
                             <constraint firstAttribute="trailing" secondItem="3Yo-3U-NIM" secondAttribute="trailing" id="lN3-Dt-5X3"/>
                             <constraint firstItem="18O-9T-PqO" firstAttribute="leading" secondItem="P3x-hK-zfU" secondAttribute="leading" id="mSg-QO-Pcc"/>
                             <constraint firstItem="cee-xp-Q5q" firstAttribute="top" secondItem="3Yo-3U-NIM" secondAttribute="bottom" id="tMb-Ft-cxh"/>

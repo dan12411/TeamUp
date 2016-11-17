@@ -26,11 +26,18 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     
     var reactionOne = [Reaction.facebook.angry]
     var reactionTwo = [Reaction.facebook.love]
-    var reactionDefault: [[Reaction]] = [[],[],[],[],[],[]]
+    var reactionDefault =  [[Reaction]](repeating: [], count: 5)
     let usersBestDay = [89, 40, 60]
     
     var myPlayer: AVAudioPlayer?
     
+    // 大家完成目標後的提示
+    @IBAction func finishGoal(_ sender: Any) {
+        let alert = UIAlertController(title: "恭喜您！", message: "🏅Demo Day 目標達成!  🎉", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
     
     // 選完表情按鈕
     @IBAction func pressLike(_ sender: ReactionButton!) {
@@ -136,11 +143,13 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             // Notification
             let content = UNMutableNotificationContent()
             content.title = "通知"
-            content.body = "\((goal?.usersName?[indexPath.row - 1])!)已完成今日的目標"
-            content.sound = UNNotificationSound.default()
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            if indexPath.row == 0 { return } else {
+                content.body = "\((goal?.usersName?[indexPath.row - 1])!)已完成今日的目標"
+                content.sound = UNNotificationSound.default()
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            }
             
             func checked() {
                 // for checked
