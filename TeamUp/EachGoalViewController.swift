@@ -8,6 +8,8 @@
 
 import UIKit
 import pop
+import AVFoundation
+import UserNotifications
 
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,6 +28,8 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var reactionTwo = [Reaction.facebook.love]
     var reactionDefault: [[Reaction]] = [[],[],[],[],[],[]]
     let usersBestDay = [89, 40, 60]
+    
+    var myPlayer: AVAudioPlayer?
     
     
     // 選完表情按鈕
@@ -58,6 +62,20 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Animation for table
         springForCheck()
+        
+        // Audio
+        myPlayer?.stop()
+        myPlayer?.currentTime = 0
+        myPlayer?.play()
+        
+        // Notification
+        let content = UNMutableNotificationContent()
+        content.title = "恭喜"
+        content.body = "您已完成今日的目標"
+        content.sound = UNNotificationSound.default()
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         let cell = eachGoalTableView.cellForRow(at: [0,0]) as! EachGoalTableViewCell
         
@@ -101,6 +119,11 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         // Animation for table
         springForCheck()
         
+        // Audio
+        myPlayer?.stop()
+        myPlayer?.currentTime = 0
+        myPlayer?.play()
+        
         // Get indexPath
         var cell = (sender as AnyObject).superview
         while cell is UITableViewCell == false {
@@ -109,6 +132,15 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         let targetCell = cell as! EachGoalTableViewCell
         
         if let indexPath = self.eachGoalTableView.indexPath(for: targetCell) {
+            
+            // Notification
+            let content = UNMutableNotificationContent()
+            content.title = "通知"
+            content.body = "\((goal?.usersName?[indexPath.row - 1])!)已完成今日的目標"
+            content.sound = UNNotificationSound.default()
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             
             func checked() {
                 // for checked
@@ -159,6 +191,20 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // For Audio
+        if let path = Bundle.main.path(forResource: "Coin", ofType: "mp3") {
+            
+            let audioURL = URL(fileURLWithPath: path)
+            
+            do {
+                myPlayer = try AVAudioPlayer(contentsOf: audioURL)
+                
+            } catch {
+                print("🚫 Something Wrong! 🚫")
+            }
+        }
+
+        
         // show label text content
         if let goal = goal {
             restDayLabel.text = String(describing: goal.restNum) + "天"
@@ -186,7 +232,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let goal = goal, let userImage = goal.usersImage {
-            return userImage.count
+            return (userImage.count + 1)
         }
         
         return 1
@@ -204,7 +250,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             cell.userImage.image = UIImage(named: "User")
             cell.userNameLabel.text = "張豪歐(Web)"
             cell.userBestContiDays.text = "89"
-            cell.userCurrentDays.text = String(describing: usersBestDay.first)
+            cell.userCurrentDays.text = "89"
             cell.goalProgress.progress = 1
             cell.masterImage.isHidden = false
             return cell
