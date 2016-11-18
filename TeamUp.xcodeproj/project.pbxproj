@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3999866F65F3A9D16B09F2E2 /* Pods_TeamUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A6999BC08E508C5AD8A4FB /* Pods_TeamUp.framework */; };
 		560D65701DDD8D51006FBC8A /* Coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 560D656F1DDD8D51006FBC8A /* Coin.mp3 */; };
+		560D65901DDDD4E3006FBC8A /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 560D658F1DDDD4E3006FBC8A /* LogIn.storyboard */; };
+		560D65921DDDD508006FBC8A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560D65911DDDD508006FBC8A /* LogInViewController.swift */; };
 		563F10C21DCCADAC00CC425E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F10C11DCCADAC00CC425E /* AppDelegate.swift */; };
 		563F10C41DCCADAC00CC425E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F10C31DCCADAC00CC425E /* ViewController.swift */; };
 		563F10C71DCCADAC00CC425E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563F10C51DCCADAC00CC425E /* Main.storyboard */; };
@@ -86,6 +88,8 @@
 		13A6999BC08E508C5AD8A4FB /* Pods_TeamUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFA6A7091CB3A7E039D70DA /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
 		560D656F1DDD8D51006FBC8A /* Coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Coin.mp3; sourceTree = "<group>"; };
+		560D658F1DDDD4E3006FBC8A /* LogIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		560D65911DDDD508006FBC8A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		563F10BE1DCCADAC00CC425E /* TeamUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		563F10C11DCCADAC00CC425E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		563F10C31DCCADAC00CC425E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 			children = (
 				563F10C51DCCADAC00CC425E /* Main.storyboard */,
 				563F10CA1DCCADAC00CC425E /* LaunchScreen.storyboard */,
+				560D658F1DDDD4E3006FBC8A /* LogIn.storyboard */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				56A199681DDAA8C30075857E /* MyNavigationController.swift */,
 				56A199661DD9E49F0075857E /* EditEachGoalTableViewController.swift */,
 				56F9124B1DD5868C00BEC84A /* CalendarViewController.swift */,
+				560D65911DDDD508006FBC8A /* LogInViewController.swift */,
 				5641EF961DD70C9200212D69 /* SetGoalTable */,
 				5641EF971DD70CB100212D69 /* Old */,
 			);
@@ -503,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				563F10CC1DCCADAC00CC425E /* LaunchScreen.storyboard in Resources */,
+				560D65901DDDD4E3006FBC8A /* LogIn.storyboard in Resources */,
 				568244321DD84EC700590690 /* Facebook.xcassets in Resources */,
 				5682442E1DD84EC700590690 /* FacebookReactionLocalizable.strings in Resources */,
 				560D65701DDD8D51006FBC8A /* Coin.mp3 in Resources */,
@@ -626,6 +633,7 @@
 				563F10D41DCCB0F800CC425E /* MyTableViewCell.swift in Sources */,
 				56A199671DD9E49F0075857E /* EditEachGoalTableViewController.swift in Sources */,
 				56F912401DD57FDD00BEC84A /* FSCalendarCollectionView.m in Sources */,
+				560D65921DDDD508006FBC8A /* LogInViewController.swift in Sources */,
 				568244391DD84EC700590690 /* Reaction.swift in Sources */,
 				568244401DD84EC700590690 /* ReactionSelectorConfig.swift in Sources */,
 				568244351DD84EC700590690 /* Components.swift in Sources */,

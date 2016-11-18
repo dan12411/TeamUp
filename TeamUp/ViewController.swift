@@ -17,18 +17,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userView: UIView!
     @IBOutlet weak var addGoalButton: UIButton!
-    
+    @IBOutlet weak var goalTableView: UITableView!
+
     var goals: [Goal] = []
     var ref: FIRDatabaseReference!
-//    let goals: [goal] = [
-//        goal(image:"Hunter.jpg", goalTitle: "熱血健身", restNum: 36, memberNum: 6, continNum: 24),
-//        goal(image:"OnePiece.jpg", goalTitle: "讀書會", restNum: 19, memberNum: 5, continNum: 52),
-//        goal(image:"Avengers.jpg", goalTitle: "余憶少年時", restNum: 39, memberNum: 7, continNum: 56)
-//        ]
-
-    @IBOutlet weak var goalTableView: UITableView!
+    var userCheck: Bool?
+    var usersCheck: [Bool]?
+    var reactionDefault =  [[Reaction]](repeating: [], count: 4)
     
-    // POP for animation
+    // POP For Add Goal Animation
     func spring() {
         if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
             animation.toValue = NSValue(cgSize: CGSize(width: 1.2, height: 1.2))
@@ -62,24 +59,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
         
         //MARK: - Retrieving Data (取得資料!!)
-        // 1. Attach a listener to receive updates
         ref.observe(.value, with: { snapshot in
-            // 2. Store the latest version of the data in a local variable
+            
             var newItems: [Goal] = []
             
-            // 3. loop through the grocery items
             for item in snapshot.children {
-                // 4.
                 let goalItem = Goal(snapshot: item as! FIRDataSnapshot)
                 newItems.append(goalItem)
             }
-            // 5. Reassign items to the latest version of the data
             self.goals = newItems
             self.goalTableView.reloadData()
         })
         
         //MARK: - Sorting the Grocery List(排序資料!!)
-        // call queryOrdered(byChild:) on the Firebase reference, which takes a key to order by.
         ref?.queryOrdered(byChild: "createdAt").observe(.value, with: { snapshot in
             var newItems: [Goal] = []
             
@@ -144,6 +136,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Put into next ViewController property
             dvc.userName = userName
             dvc.goal = goals[indexPath.row]
+            dvc.userCheck = userCheck
+            if let usersCheck = usersCheck {
+                dvc.usersCheck = usersCheck
+                print("====usersChek=========\(usersCheck)==================")
+            }
+            dvc.reactionDefault = reactionDefault
         }
     }
 }
