@@ -17,7 +17,6 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
     @IBOutlet weak var fouTextLabel: UILabel!
     @IBOutlet weak var imageCollecView: UIView!
     @IBOutlet weak var collectionForImage: UICollectionView!
-    @IBOutlet weak var checkImage: UIImageView!
     
     var selectedImage: String?
     
@@ -117,7 +116,7 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
         selectedImage = imageArray[indexPath.row]
         let cell = collectionForImage.cellForItem(at: indexPath) as! FouCollectionViewCell
         cell.alpha = 0.4
-        checkImage.isHidden = false
+        cell.cellCheckImage.isHidden = false
     }
 
     // MARK: - TableViewDataSource

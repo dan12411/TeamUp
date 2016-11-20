@@ -11,6 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController , FSCalendarDataSource, FSCalendarDelegate {
     
     private weak var calendar: FSCalendar!
+    var dayOfTask: String?
     
     override func loadView() {
         
@@ -44,6 +45,27 @@ class CalendarViewController: UIViewController , FSCalendarDataSource, FSCalenda
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendar.frame = CGRect(x: 0, y: self.navigationController!.navigationBar.frame.maxY, width: bounds.width, height: bounds.height)
     }
+    
+    // FSCalendarDelegate
+    func calendar(_ calendar: FSCalendar, didSelect date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        let str = dateFormatter.string(from: date)
+        let vc = navigationController?.parent as! EachGoalViewController
+        
+        if str == "21" {
+            dayOfTask = "Final Project Rehearsal #1"
+            vc.goalListLabel.text = dayOfTask
+        } else if str == "22" {
+            dayOfTask = "Final Project Rehearsal #2"
+        } else if str == "23" {
+            dayOfTask = "Demo Day"
+        } else {
+            dayOfTask = ""
+        }
+        
+        vc.goalListLabel.text = dayOfTask
+    }
 
     /*
     // MARK: - Navigation
@@ -56,3 +78,5 @@ class CalendarViewController: UIViewController , FSCalendarDataSource, FSCalenda
     */
 
 }
+
+

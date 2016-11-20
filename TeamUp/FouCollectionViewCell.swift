@@ -11,5 +11,6 @@ import UIKit
 class FouCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var cellCheckImage: UIImageView!
     
 }

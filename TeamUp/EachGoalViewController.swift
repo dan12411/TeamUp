@@ -26,7 +26,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var userCheck: Bool?
     let myGreenColor = UIColor(red: 123.0/255.0, green: 185.0/255.0, blue: 91.0/255.0, alpha: 1.0)
     var reactionDefault =  [[Reaction]](repeating: [], count: 4)
-    let usersBestDay = [89, 40, 60]
+    let usersBestDay = [89, 40, 50]
     var usersCheck: [Bool]?
     var myPlayer: AVAudioPlayer?
     let alert = UIAlertController(title: "恭喜您！", message: "🏅Demo Day 目標達成!  🎉", preferredStyle: .alert)
@@ -299,6 +299,9 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Change the color of the separator
         eachGoalTableView.separatorColor = UIColor.clear
+        
+        // Remove the title of the back button
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -353,9 +356,9 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.row == 0 {
             cell.userImage.image = UIImage(named: "User")
             cell.userNameLabel.text = userName
-            cell.userBestContiDays.text = "89"
-            cell.userCurrentDays.text = "89"
-            cell.goalProgress.progress = 1
+            cell.userBestContiDays.text = "28"
+            cell.userCurrentDays.text = "40"
+            cell.goalProgress.progress = 0.7
             cell.masterImage.isHidden = false
             if let userCheck = userCheck {
                 if userCheck {

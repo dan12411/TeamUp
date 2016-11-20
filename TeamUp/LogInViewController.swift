@@ -29,6 +29,7 @@ class LogInViewController: UINavigationController, FBSDKLoginButtonDelegate {
         
         fbLoginButton.center = self.view.center
         self.view.addSubview(fbLoginButton)
+        fbLoginButton.delegate = self
         FBSDKProfile.enableUpdates(onAccessTokenChange: true)
         
         // 檢查是否有FB帳號
@@ -59,6 +60,8 @@ class LogInViewController: UINavigationController, FBSDKLoginButtonDelegate {
             let paras: Parameters = ["access_token": accessToken]
             
             let loginRequest = request(loginUrl, method: .get, parameters: paras, encoding: URLEncoding.default)
+            
+            print("``````````\(loginRequest)```````````")
             
             loginRequest.responseJSON(completionHandler: { (response: DataResponse<Any>) in
                 switch response.result {

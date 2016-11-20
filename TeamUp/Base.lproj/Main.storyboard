@@ -1497,7 +1497,7 @@
         <!--Invite Friends-->
         <scene sceneID="drq-G5-iUu">
             <objects>
-                <viewController id="fa8-gi-0Zx" sceneMemberID="viewController">
+                <viewController id="fa8-gi-0Zx" customClass="InviteFriendsViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xOW-iL-a4L"/>
                         <viewControllerLayoutGuide type="bottom" id="fYs-4S-jdQ"/>
@@ -1505,13 +1505,96 @@
                     <view key="view" contentMode="scaleToFill" id="9Sz-fz-zFn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rcd-pK-ggY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OaC-K1-oRb">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="wQq-n7-Gbi" customClass="InviteFriendTableViewCell" customModule="TeamUp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wQq-n7-Gbi" id="usj-lN-4XG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TC" translatesAutoresizingMaskIntoConstraints="NO" id="qA7-SP-We8">
+                                                    <rect key="frame" x="13" y="10" width="59.5" height="59.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="qA7-SP-We8" secondAttribute="height" multiplier="1:1" id="qPk-Dk-q5K"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-2p-cEc">
+                                                    <rect key="frame" x="92.5" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT6-mQ-zpE">
+                                                    <rect key="frame" x="335" y="30" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="Feu-wI-zqE"/>
+                                                        <constraint firstAttribute="height" constant="20" id="lO0-YF-6uT"/>
+                                                    </constraints>
+                                                    <state key="normal" image="addFriend"/>
+                                                    <state key="highlighted" image="checkBlack"/>
+                                                    <connections>
+                                                        <action selector="addFriend:" destination="fa8-gi-0Zx" eventType="touchUpInside" id="fqE-yA-Dkb"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="XT6-mQ-zpE" secondAttribute="trailing" constant="20" id="6RA-eG-vGy"/>
+                                                <constraint firstItem="qA7-SP-We8" firstAttribute="leading" secondItem="usj-lN-4XG" secondAttribute="leading" constant="13" id="Maj-Yx-hch"/>
+                                                <constraint firstItem="SWR-2p-cEc" firstAttribute="centerY" secondItem="qA7-SP-We8" secondAttribute="centerY" id="XdC-jp-Df3"/>
+                                                <constraint firstItem="XT6-mQ-zpE" firstAttribute="centerY" secondItem="SWR-2p-cEc" secondAttribute="centerY" id="cRj-Kk-HRU"/>
+                                                <constraint firstItem="SWR-2p-cEc" firstAttribute="leading" secondItem="qA7-SP-We8" secondAttribute="trailing" constant="20" id="cXn-RE-t1Z"/>
+                                                <constraint firstItem="qA7-SP-We8" firstAttribute="top" secondItem="usj-lN-4XG" secondAttribute="top" constant="10" id="jRq-sx-Hkk"/>
+                                                <constraint firstAttribute="bottom" secondItem="qA7-SP-We8" secondAttribute="bottom" constant="10" id="z7E-Gn-s2e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addFriendButton" destination="XT6-mQ-zpE" id="AB2-pg-Ila"/>
+                                            <outlet property="friendsImage" destination="qA7-SP-We8" id="zdG-Xs-GzU"/>
+                                            <outlet property="friendsNameLabel" destination="SWR-2p-cEc" id="FLq-ms-UJ9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fa8-gi-0Zx" id="1gc-IL-H8a"/>
+                                    <outlet property="delegate" destination="fa8-gi-0Zx" id="7hE-EH-0mq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fYs-4S-jdQ" firstAttribute="top" secondItem="OaC-K1-oRb" secondAttribute="bottom" id="5HG-em-0Xa"/>
+                            <constraint firstItem="OaC-K1-oRb" firstAttribute="leading" secondItem="9Sz-fz-zFn" secondAttribute="leading" id="Hk1-dw-Bwe"/>
+                            <constraint firstItem="OaC-K1-oRb" firstAttribute="top" secondItem="rcd-pK-ggY" secondAttribute="bottom" id="JVs-do-xXn"/>
+                            <constraint firstItem="rcd-pK-ggY" firstAttribute="leading" secondItem="9Sz-fz-zFn" secondAttribute="leading" id="MQo-CV-ccb"/>
+                            <constraint firstItem="OaC-K1-oRb" firstAttribute="top" secondItem="rcd-pK-ggY" secondAttribute="bottom" id="Q9v-Sy-Lyd"/>
+                            <constraint firstItem="rcd-pK-ggY" firstAttribute="top" secondItem="xOW-iL-a4L" secondAttribute="bottom" id="ak6-Ld-OVc"/>
+                            <constraint firstAttribute="trailing" secondItem="rcd-pK-ggY" secondAttribute="trailing" id="mrl-0Y-5ci"/>
+                            <constraint firstAttribute="trailing" secondItem="OaC-K1-oRb" secondAttribute="trailing" id="n06-zG-6hC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Invite Friends" id="Xfm-Fp-l3D"/>
+                    <connections>
+                        <outlet property="friendsTableView" destination="OaC-K1-oRb" id="Uim-Zc-6zi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dab-1q-sTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="251"/>
+            <point key="canvasLocation" x="2773.5999999999999" y="250.52473763118442"/>
         </scene>
         <!--新增目標-->
         <scene sceneID="Zai-Mi-ODl">
@@ -2057,23 +2140,23 @@
                                     <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="1" id="mIY-Yu-AyD">
                                         <rect key="frame" x="0.0" y="172" width="375" height="1"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="mIY-Yu-AyD" id="byL-N3-o9k">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIY-Yu-AyD" id="byL-N3-o9k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idp-C4-Xn5">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idp-C4-Xn5">
                                                     <rect key="frame" x="30" y="7" width="305" height="0.0"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Yy-hG-JjB">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Yy-hG-JjB">
                                                             <rect key="frame" x="40" y="0.0" width="265" height="32"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="tue" translatesAutoresizingMaskIntoConstraints="NO" id="46k-dS-ayN">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tue" translatesAutoresizingMaskIntoConstraints="NO" id="46k-dS-ayN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="46k-dS-ayN" secondAttribute="height" multiplier="1:1" id="HSd-dd-7Za"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="星期二的行動計畫" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-JB-3ny" customClass="IsaoTextField" customModule="TeamUp" customModuleProvider="target">
+                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="星期二的行動計畫" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-JB-3ny" customClass="IsaoTextField" customModule="TeamUp" customModuleProvider="target">
                                                                     <rect key="frame" x="40" y="0.0" width="225" height="32"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2540,13 +2623,22 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cC-oq-wTi">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
                                                                             </imageView>
+                                                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBlack" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-ba-3Yk">
+                                                                                <rect key="frame" x="92" y="50" width="20" height="20"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="20" id="SdJ-Ee-OcJ"/>
+                                                                                    <constraint firstAttribute="height" constant="20" id="oLr-lC-iMn"/>
+                                                                                </constraints>
+                                                                            </imageView>
                                                                         </subviews>
                                                                     </view>
                                                                     <constraints>
                                                                         <constraint firstItem="6cC-oq-wTi" firstAttribute="leading" secondItem="HGE-HT-iEn" secondAttribute="leading" id="Eb3-ON-4wQ"/>
                                                                         <constraint firstAttribute="bottom" secondItem="6cC-oq-wTi" secondAttribute="bottom" id="jYn-h0-a3a"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="dtB-ba-3Yk" secondAttribute="trailing" constant="8" id="ksK-ma-kZr"/>
                                                                         <constraint firstAttribute="trailing" secondItem="6cC-oq-wTi" secondAttribute="trailing" id="lzZ-jO-f4V"/>
                                                                         <constraint firstItem="6cC-oq-wTi" firstAttribute="top" secondItem="HGE-HT-iEn" secondAttribute="top" id="m4r-DR-Kmy"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="dtB-ba-3Yk" secondAttribute="bottom" constant="10" id="uL5-pC-KGn"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -2554,6 +2646,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                     <connections>
+                                                                        <outlet property="cellCheckImage" destination="dtB-ba-3Yk" id="hhS-ID-t4G"/>
                                                                         <outlet property="myImage" destination="6cC-oq-wTi" id="3cG-ma-pbO"/>
                                                                     </connections>
                                                                 </collectionViewCell>
@@ -2563,18 +2656,10 @@
                                                                 <outlet property="delegate" destination="ft3-6D-knB" id="bTm-Ef-Shj"/>
                                                             </connections>
                                                         </collectionView>
-                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBlack" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-ba-3Yk">
-                                                            <rect key="frame" x="145" y="121" width="20" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="SdJ-Ee-OcJ"/>
-                                                                <constraint firstAttribute="height" constant="20" id="oLr-lC-iMn"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="0Zo-sh-Ayc" firstAttribute="leading" secondItem="n3L-8G-BLm" secondAttribute="trailing" constant="15" id="1rB-Xv-rbb"/>
                                                         <constraint firstItem="n3L-8G-BLm" firstAttribute="leading" secondItem="qqh-B6-Sj8" secondAttribute="leading" id="3pc-jE-gB9"/>
-                                                        <constraint firstItem="ohL-yf-sh2" firstAttribute="top" secondItem="dtB-ba-3Yk" secondAttribute="bottom" constant="-82" id="BGE-aF-USG"/>
                                                         <constraint firstItem="0Zo-sh-Ayc" firstAttribute="top" secondItem="qqh-B6-Sj8" secondAttribute="top" id="CV6-bd-LTd"/>
                                                         <constraint firstItem="n3L-8G-BLm" firstAttribute="top" secondItem="qqh-B6-Sj8" secondAttribute="top" id="Gdc-az-7yu"/>
                                                         <constraint firstItem="ohL-yf-sh2" firstAttribute="top" secondItem="Lba-hA-n3z" secondAttribute="bottom" constant="8" id="Isk-Id-Xid"/>
@@ -2582,7 +2667,6 @@
                                                         <constraint firstItem="ohL-yf-sh2" firstAttribute="trailing" secondItem="Lba-hA-n3z" secondAttribute="trailing" id="NcH-zp-OSm"/>
                                                         <constraint firstItem="Lba-hA-n3z" firstAttribute="top" secondItem="0Zo-sh-Ayc" secondAttribute="bottom" id="ReY-Wk-tyU"/>
                                                         <constraint firstAttribute="trailing" secondItem="0Zo-sh-Ayc" secondAttribute="trailing" id="TKg-iD-AbF"/>
-                                                        <constraint firstItem="ohL-yf-sh2" firstAttribute="leading" secondItem="dtB-ba-3Yk" secondAttribute="trailing" constant="-125" id="V31-88-RzZ"/>
                                                         <constraint firstItem="Lba-hA-n3z" firstAttribute="trailing" secondItem="0Zo-sh-Ayc" secondAttribute="trailing" id="afj-Va-WCh"/>
                                                         <constraint firstAttribute="bottom" secondItem="ohL-yf-sh2" secondAttribute="bottom" id="kUp-as-HZb"/>
                                                         <constraint firstItem="Lba-hA-n3z" firstAttribute="leading" secondItem="0Zo-sh-Ayc" secondAttribute="leading" id="xZO-RF-AwS"/>
@@ -2613,7 +2697,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="checkImage" destination="dtB-ba-3Yk" id="TY0-b4-CUf"/>
                         <outlet property="collectionForImage" destination="ohL-yf-sh2" id="Xx7-mA-cro"/>
                         <outlet property="fouTextLabel" destination="0Zo-sh-Ayc" id="aXw-Tb-wpf"/>
                         <outlet property="imageCollecView" destination="qqh-B6-Sj8" id="wEm-NN-uuZ"/>
@@ -3279,6 +3362,7 @@
         <image name="Photo" width="36" height="36"/>
         <image name="TC" width="1080" height="1080"/>
         <image name="Turn" width="24" height="26"/>
+        <image name="addFriend" width="48" height="48"/>
         <image name="checkBlack" width="50" height="50"/>
         <image name="checkWhite" width="50" height="50"/>
         <image name="countdown" width="18" height="20"/>
