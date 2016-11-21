@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,6 +17,7 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
     let friendsNameArray = ["Bernard" ,"George"]
     var friendInArray = [false, false]
     
+    // 按下加入的按鈕
     @IBAction func addFriend(_ sender: Any) {
         
         // Get indexPath
@@ -26,12 +28,25 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
         let targetCell = cell as! InviteFriendTableViewCell
         
         if let indexPath = self.friendsTableView.indexPath(for: targetCell) {
+            
+            // Notification
+            func notiForAddFriend() {
+                let content = UNMutableNotificationContent()
+                content.title = "通知"
+                content.body = "您已邀請\(friendsNameArray[indexPath.row])加入"
+                content.sound = UNNotificationSound.default()
+                let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: nil)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                print("=============================")
+            }
+            
             if friendInArray[indexPath.row] {
                 targetCell.addFriendButton.setImage(#imageLiteral(resourceName: "addFriend"), for: .normal)
                 friendInArray[indexPath.row] = false
             } else {
                 targetCell.addFriendButton.setImage(#imageLiteral(resourceName: "checkBlack"), for: .normal)
                 friendInArray[indexPath.row] = true
+                notiForAddFriend()
             }
         }
     }

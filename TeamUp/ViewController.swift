@@ -30,8 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let animation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY) {
             animation.toValue = NSValue(cgSize: CGSize(width: 1.2, height: 1.2))
             
-            animation.springBounciness = 10 //[0-20] 弹力 越大则震动幅度越大
-            animation.springSpeed = 20 //[0-20] 速度 越大则动画结束越快
+            animation.springBounciness = 15 //[0-20] 弹力 越大则震动幅度越大
+            animation.springSpeed = 15 //[0-20] 速度 越大则动画结束越快
             animation.autoreverses = true
             
             addGoalButton.layer.pop_add(animation, forKey: "spring")
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let barFont = UIFont(name: "SignPainter", size: 30.0) {
+        if let barFont = UIFont(name: "STHeitiTC-Light", size: 20.0) {
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
         }
         

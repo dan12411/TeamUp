@@ -31,6 +31,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var myPlayer: AVAudioPlayer?
     let alert = UIAlertController(title: "恭喜您！", message: "🏅Demo Day 目標達成!  🎉", preferredStyle: .alert)
     
+    // 完成目標後，跳出"目標完成"的警告視窗，並自動消失
     func notifyUser() {
 //        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
 //        alert.addAction(okAction)
@@ -41,10 +42,12 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    // 跳出警告視窗
     func presentAlert() {
         UIApplication.shared.keyWindow?.rootViewController!.present(alert, animated: true, completion: nil)
     }
     
+    // 警告視窗消失
     func dismissAlert() {
         alert.dismiss(animated: false, completion: nil)
     }
@@ -193,8 +196,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
                 content.title = "通知"
                 content.body = "\((goal?.usersName?[indexPath.row - 1])!)已完成今日的目標"
                 content.sound = UNNotificationSound.default()
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-                let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: "notification2", content: content, trigger: nil)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             }
             
@@ -264,6 +266,8 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = goal?.goalTitle
         
         // Check Check or not
         if let userCheck = userCheck {
