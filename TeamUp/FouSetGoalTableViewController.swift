@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Material
 
 class FouSetGoalTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -68,12 +69,12 @@ class FouSetGoalTableViewController: UITableViewController, UICollectionViewDele
         self.fouTextLabel.text = "挑選適合的圖來當封面吧！"
         
         // Let's Go Button
-        let nextButton = UIButton(type: .system)
+        let nextButton = FlatButton(title: "Let's Go")
         nextButton.frame = CGRect(x: (self.tableView.frame.size.width / 2) - 50, y: (self.tableView.frame.size.height) * (3 / 4), width: 100, height: 40)
         nextButton.titleLabel?.font = UIFont(name: "STHeitiTC-Light", size: 20)
         nextButton.setTitleColor(UIColor(red: 57.0/255.0, green: 158.0/255.0, blue: 203.0/255.0, alpha: 1.0), for: .normal)
-        nextButton.setTitle("Let's Go", for: .normal)
-        nextButton.setTitle("", for: .highlighted)
+//        nextButton.setTitle("Let's Go", for: .normal)
+//        nextButton.setTitle("", for: .highlighted)
         nextButton.addTarget(self, action: #selector(FouSetGoalTableViewController.back(_:)), for: UIControlEvents.touchUpInside)
         tableView.addSubview(nextButton)
         

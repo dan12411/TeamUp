@@ -59,7 +59,7 @@ class LogInViewController: UINavigationController, FBSDKLoginButtonDelegate {
             let loginUrl = "http://139.162.41.79/api/login"
             let paras: Parameters = ["access_token": accessToken]
             
-            let loginRequest = request(loginUrl, method: .get, parameters: paras, encoding: URLEncoding.default)
+            let loginRequest = request(loginUrl, method: .post, parameters: paras, encoding: URLEncoding.default)
             
             print("``````````\(loginRequest)```````````")
             
