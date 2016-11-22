@@ -54,10 +54,10 @@ class CalendarViewController: UIViewController , FSCalendarDataSource, FSCalenda
         let vc = navigationController?.parent as! EachGoalViewController
         
         if str == "21" {
-            dayOfTask = "Final Project Rehearsal #1"
+            dayOfTask = "Fix BUG"
             vc.goalListLabel.text = dayOfTask
         } else if str == "22" {
-            dayOfTask = "Final Project Rehearsal #2"
+            dayOfTask = "Final Project Rehearsal"
         } else if str == "23" {
             dayOfTask = "Demo Day"
         } else {

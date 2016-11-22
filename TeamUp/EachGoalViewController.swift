@@ -10,6 +10,7 @@ import UIKit
 import pop
 import AVFoundation
 import UserNotifications
+import Firebase
 
 class EachGoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -30,6 +31,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
     var usersCheck: [Bool]?
     var myPlayer: AVAudioPlayer?
     let alert = UIAlertController(title: "恭喜您！", message: "🏅Demo Day 目標達成!  🎉", preferredStyle: .alert)
+    var ref: FIRDatabaseReference? = nil
     
     // 完成目標後，跳出"目標完成"的警告視窗，並自動消失
     func notifyUser() {
@@ -104,6 +106,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         // Property
         let cell = eachGoalTableView.cellForRow(at: [0,0]) as! EachGoalTableViewCell
         let controller = navigationController?.viewControllers.first as! ViewController
+        ref = FIRDatabase.database().reference(withPath: "TeamUp-goals")
         
         func checked() {
             // for checked
@@ -133,6 +136,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             unChecked()
             userCheck = false
             controller.userCheck = userCheck
+            goal?.ref?.updateChildValues(["userCheck": userCheck ?? false])
             // deselect
             sender.deselect()
             
@@ -140,10 +144,12 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             checked()
             userCheck = !false
             controller.userCheck = userCheck
+            goal?.ref?.updateChildValues(["userCheck": userCheck ?? true])
             notiForCheck()
             // select with animation
             sender.select()
         }
+        
     }
     
     // 其他user按下確認鈕的動作
@@ -270,7 +276,7 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         self.title = goal?.goalTitle
         
         // Check Check or not
-        if let userCheck = userCheck {
+        if let userCheck = goal?.userCheck {
             if userCheck {
                 checkButton.isSelected = true
             } else {
@@ -333,6 +339,11 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.goalProgress.transform = CGAffineTransform(scaleX: 1, y: 5)
         cell.reactionSummary.reactions = reactionDefault[indexPath.row]
+        cell.userBestContiDays.text = goal?.userBestContiDays?[indexPath.row]
+        if let userProgress = goal?.goalProgress?[indexPath.row] {
+            cell.goalProgress.progress = userProgress
+        } else { cell.goalProgress.progress = 0.0 }
+        cell.userCurrentDays.text = goal?.userCurrentDays?[indexPath.row]
         
         func checked() {
             // for checked
@@ -360,11 +371,11 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.row == 0 {
             cell.userImage.image = UIImage(named: "User")
             cell.userNameLabel.text = userName
-            cell.userBestContiDays.text = "28"
-            cell.userCurrentDays.text = "40"
-            cell.goalProgress.progress = 0.7
+//            cell.userBestContiDays.text = "28"
+//            cell.userCurrentDays.text = "40"
+//            cell.goalProgress.progress = 0.7
             cell.masterImage.isHidden = false
-            if let userCheck = userCheck {
+            if let userCheck = goal?.userCheck {
                 if userCheck {
                     checked()
                 } else {
@@ -383,9 +394,9 @@ class EachGoalViewController: UIViewController, UITableViewDelegate, UITableView
             }
             cell.userImage.image = UIImage(named: (goal?.usersImage?[indexPath.row - 1])!)
             cell.userNameLabel.text = goal?.usersName?[indexPath.row - 1]
-            cell.userBestContiDays.text = goal?.userBestContiDays?[indexPath.row - 1]
-            cell.userCurrentDays.text = String(usersBestDay[indexPath.row - 1])
-            cell.goalProgress.progress = (goal?.goalProgress?[indexPath.row - 1])!
+//            cell.userBestContiDays.text = goal?.userBestContiDays?[indexPath.row - 1]
+//            cell.userCurrentDays.text = String(usersBestDay[indexPath.row - 1])
+//            cell.goalProgress.progress = (goal?.goalProgress?[indexPath.row - 1])!
             return cell
         }
         

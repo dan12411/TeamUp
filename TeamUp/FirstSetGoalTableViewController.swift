@@ -23,8 +23,7 @@ class FirstSetGoalTableViewController: UITableViewController {
     }
     
     @IBAction func settingContent(_ sender: Any) {
-        goalTitleTextField.text = "英文讀書會"
-        print("================\(goalTitleTextField.text)====================")
+        goalTitleTextField.text = "iOS 讀書會"
     }
     
     // 回到主畫面

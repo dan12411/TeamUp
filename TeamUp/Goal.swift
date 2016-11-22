@@ -23,6 +23,8 @@ struct Goal {
     var usersName: [String]?
     var userBestContiDays: [String]?
     var goalProgress: [Float]?
+    var userCheck: Bool?
+    var userCurrentDays: [String]?
     
     init (key: String = "",createdAt: String, image: String, goalTitle: String, restNum: Int, memberNum: Int, continNum : Int) {
         self.key = key
@@ -38,6 +40,8 @@ struct Goal {
         self.usersName = nil
         self.userBestContiDays = nil
         self.goalProgress = nil
+        self.userCheck = nil
+        self.userCurrentDays = nil
     }
     
     // 用來存入至資料庫
@@ -56,6 +60,8 @@ struct Goal {
         usersName = snapshotValue["usersName"] as? [String]
         userBestContiDays = snapshotValue["userBestContiDays"] as? [String]
         goalProgress = snapshotValue["goalProgress"] as? [Float]
+        userCheck = snapshotValue["userCheck"] as? Bool
+        userCurrentDays = snapshotValue["userCurrentDays"] as? [String]
     }
     
     // 用來存入至資料庫
@@ -69,9 +75,11 @@ struct Goal {
             "continNum": continNum,
             "monGoal": monGoal ?? "",
             "usersImage": usersImage ?? "",
-            "usersName": usersName ?? "",
-            "userBestContiDays": userBestContiDays ?? "",
-            "goalProgress": goalProgress ?? 0.0,
+            "usersName": usersName ?? [""],
+            "userBestContiDays": userBestContiDays ?? ["0"],
+            "goalProgress": goalProgress ?? [0.0],
+            "userCheck": userCheck ?? false,
+            "userCurrentDays": userCurrentDays ?? ["0"]
         ]
     }
 }

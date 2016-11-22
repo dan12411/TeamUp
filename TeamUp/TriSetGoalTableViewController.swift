@@ -22,9 +22,9 @@ class TriSetGoalTableViewController: UITableViewController {
     @IBOutlet weak var satTextField: UITextField!
     @IBOutlet weak var sunTextField: UITextField!
     @IBAction func settingContent(_ sender: Any) {
-        monTextField.text = "讀英文小說兩頁"
-        wedTextField.text = "讀英文小說兩頁"
-        friTextField.text = "讀英文小說兩頁"
+        monTextField.text = "閱讀『Swift程式設計入門』"
+        wedTextField.text = "分享閱讀的重點"
+        friTextField.text = "寫一篇技術文Blog"
     }
     
     // 回到主畫面

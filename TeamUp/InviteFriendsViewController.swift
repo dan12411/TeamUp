@@ -8,14 +8,15 @@
 
 import UIKit
 import UserNotifications
+import Material
 
 class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var friendsTableView: UITableView!
     
-    let friendsImageArray = ["BE", "GE"]
-    let friendsNameArray = ["Bernard" ,"George"]
-    var friendInArray = [false, false]
+    let friendsImageArray = ["BE", "GE", "Hung", "Justin", "Ollie", "Denny", "Howard", "Jacob", "Pampas", "PCboy", "HEROGWP"]
+    let friendsNameArray = ["Bernard" ,"George", "Hung", "Justin", "Ollie", "Denny", "Howard", "Jacob", "Pampas", "PCboy", "HERPOWP"]
+    var friendInArray = [false, false, false, false, false, false, false, false, false, false, false]
     
     // 按下加入的按鈕
     @IBAction func addFriend(_ sender: Any) {
@@ -37,7 +38,6 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
                 content.sound = UNNotificationSound.default()
                 let request = UNNotificationRequest(identifier: "notification1", content: content, trigger: nil)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                print("=============================")
             }
             
             if friendInArray[indexPath.row] {
@@ -53,7 +53,7 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,7 +67,7 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return friendsNameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
