@@ -76,6 +76,12 @@ class InviteFriendsViewController: UIViewController, UITableViewDataSource, UITa
         cell.friendsImage.image = UIImage(named: friendsImageArray[indexPath.row])
         cell.friendsNameLabel.text = friendsNameArray[indexPath.row]
         
+        if friendInArray[indexPath.row] {
+            cell.addFriendButton.setImage(#imageLiteral(resourceName: "checkBlack"), for: .normal)
+        } else {
+            cell.addFriendButton.setImage(#imageLiteral(resourceName: "addFriend"), for: .normal)
+        }
+        
         return cell
     }
 
