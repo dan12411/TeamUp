@@ -6,4 +6,4 @@ TeamUp 是一款目標管理的APP，藉由明確的目標計劃，與朋友之�
 
 [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg)]()
 
-[](https://www.youtube.com/watch?v=_mDoVwiCKOg)
+![](https://www.youtube.com/watch?v=_mDoVwiCKOg)
